@@ -64,4 +64,4 @@ app.get('/', function(request, response) {
 app.listen(app.get('port'), '0.0.0.0', function() {
   console.log("Node app is running at 0.0.0.0:" + app.get('port'))
 })
-console.log("🚀 Updated at " + new Date());
+// console.log("🚀 Updated at " + new Date());
