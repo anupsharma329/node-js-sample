@@ -1,0 +1,3511 @@
+[2025-07-14 10:19:59Z INFO HostContext] No proxy settings were found based on environmental variables (http_proxy/https_proxy/HTTP_PROXY/HTTPS_PROXY)
+[2025-07-14 10:19:59Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:19:59Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:19:59Z INFO HostContext] Well known config file 'Credentials': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/.credentials'
+[2025-07-14 10:19:59Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:19:59Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:19:59Z INFO HostContext] Well known config file 'Runner': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/.runner'
+[2025-07-14 10:19:59Z INFO Worker] Version: 2.326.0
+[2025-07-14 10:19:59Z INFO Worker] Commit: de0233c4d64676d8ebd16074221ae1e0e0bf2a13
+[2025-07-14 10:19:59Z INFO Worker] Culture: en-IN
+[2025-07-14 10:19:59Z INFO Worker] UI Culture: en-IN
+[2025-07-14 10:19:59Z INFO Worker] Waiting to receive the job message from the channel.
+[2025-07-14 10:19:59Z INFO ProcessChannel] Receiving message of length 35645, with hash '68988b07fc98655b7415a8785db46ec63adefc1549fb9a8641f9ff0ec7fc134b'
+[2025-07-14 10:19:59Z INFO Worker] Message received.
+[2025-07-14 10:20:00Z INFO Worker] Job message:
+ {
+  "environmentVariables": [
+    {
+      "type": 2,
+      "file": 1,
+      "line": 44,
+      "col": 7,
+      "map": [
+        {
+          "key": {
+            "type": 0,
+            "file": 1,
+            "line": 44,
+            "col": 7,
+            "lit": "IMAGE_NAME"
+          },
+          "value": {
+            "type": 0,
+            "file": 1,
+            "line": 44,
+            "col": 19,
+            "lit": "anupsharma329/node"
+          }
+        },
+        {
+          "key": {
+            "type": 0,
+            "file": 1,
+            "line": 45,
+            "col": 7,
+            "lit": "IMAGE_TAG"
+          },
+          "value": {
+            "type": 3,
+            "file": 1,
+            "line": 45,
+            "col": 18,
+            "expr": "github.sha"
+          }
+        }
+      ]
+    }
+  ],
+  "fileTable": [
+    ".github/workflows/node.js.yml"
+  ],
+  "mask": [
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    }
+  ],
+  "steps": [
+    {
+      "type": "action",
+      "reference": {
+        "type": "repository",
+        "name": "actions/checkout",
+        "ref": "v3",
+        "repositoryType": "GitHub"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 48,
+        "col": 15,
+        "lit": "Checkout code"
+      },
+      "contextName": "__actions_checkout",
+      "condition": "success()",
+      "id": "52968da0-0bf0-4fe0-93fd-90058f69ed73",
+      "name": "__actions_checkout"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 51,
+        "col": 15,
+        "lit": "Set up Kubeconfig"
+      },
+      "contextName": "__run",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 3,
+              "file": 1,
+              "line": 52,
+              "col": 14,
+              "expr": "format('echo \"{0}\" > kubeconfig\nexport KUBECONFIG=$PWD/kubeconfig\n', secrets.KUBECONFIG_CONTENT)"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "6e522902-039a-4e8a-8cb9-dc9c180e19a9",
+      "name": "__run"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 56,
+        "col": 15,
+        "lit": "Deploy to Kubernetes (Self-hosted)"
+      },
+      "contextName": "__run_2",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 3,
+              "file": 1,
+              "line": 57,
+              "col": 14,
+              "expr": "format('kubectl set image deployment/node-js-sample node-js-sample={0}:{1}\n', env.IMAGE_NAME, env.IMAGE_TAG)"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "84f393a6-6db2-4ffd-a916-09eaa6bc7988",
+      "name": "__run_2"
+    }
+  ],
+  "variables": {
+    "Actions.EnableHttpRedirects": {
+      "value": "true"
+    },
+    "DistributedTask.AddWarningToNode12Action": {
+      "value": "true"
+    },
+    "DistributedTask.AddWarningToNode16Action": {
+      "value": "true"
+    },
+    "DistributedTask.AllowRunnerContainerHooks": {
+      "value": "true"
+    },
+    "DistributedTask.DeprecateStepOutputCommands": {
+      "value": "true"
+    },
+    "DistributedTask.DetailUntarFailure": {
+      "value": "true"
+    },
+    "DistributedTask.EnableCompositeActions": {
+      "value": "true"
+    },
+    "DistributedTask.EnableJobServerQueueTelemetry": {
+      "value": "true"
+    },
+    "DistributedTask.EnhancedAnnotations": {
+      "value": "true"
+    },
+    "DistributedTask.ForceGithubJavascriptActionsToNode16": {
+      "value": "true"
+    },
+    "DistributedTask.ForceGithubJavascriptActionsToNode20": {
+      "value": "true"
+    },
+    "DistributedTask.LogTemplateErrorsAsDebugMessages": {
+      "value": "true"
+    },
+    "DistributedTask.MarkJobAsFailedOnWorkerCrash": {
+      "value": "true"
+    },
+    "DistributedTask.NewActionMetadata": {
+      "value": "true"
+    },
+    "DistributedTask.UploadStepSummary": {
+      "value": "true"
+    },
+    "DistributedTask.UseActionArchiveCache": {
+      "value": "true"
+    },
+    "DistributedTask.UseWhich2": {
+      "value": "true"
+    },
+    "KUBECONFIG_CONTENT": {
+      "value": "***",
+      "isSecret": true
+    },
+    "RunService.FixEmbeddedIssues": {
+      "value": "true"
+    },
+    "actions_add_check_run_id_to_job_context": {
+      "value": "false"
+    },
+    "actions_display_helpful_actions_download_errors": {
+      "value": "true"
+    },
+    "actions_skip_retry_complete_job_upon_known_errors": {
+      "value": "true"
+    },
+    "actions_uses_cache_service_v2": {
+      "value": "true"
+    },
+    "github_token": {
+      "value": "***",
+      "isSecret": true
+    },
+    "system.from_run_service": {
+      "value": "true"
+    },
+    "system.github.job": {
+      "value": "self-hosted-deploy"
+    },
+    "system.github.launch_endpoint": {
+      "value": "https://launch.actions.githubusercontent.com"
+    },
+    "system.github.results_endpoint": {
+      "value": "https://results-receiver.actions.githubusercontent.com/"
+    },
+    "system.github.results_upload_with_sdk": {
+      "value": "true"
+    },
+    "system.github.token": {
+      "value": "***",
+      "isSecret": true
+    },
+    "system.github.token.permissions": {
+      "value": "{\"Actions\":\"write\",\"Attestations\":\"write\",\"Checks\":\"write\",\"Contents\":\"write\",\"Deployments\":\"write\",\"Discussions\":\"write\",\"Issues\":\"write\",\"Metadata\":\"read\",\"Models\":\"read\",\"Packages\":\"write\",\"Pages\":\"write\",\"PullRequests\":\"write\",\"RepositoryProjects\":\"write\",\"SecurityEvents\":\"write\",\"Statuses\":\"write\"}"
+    },
+    "system.orchestrationId": {
+      "value": "a4e8ab04-3ab9-4170-bb7a-40e9db418b48.self-hosted-deploy.__default"
+    },
+    "system.phaseDisplayName": {
+      "value": "self-hosted-deploy"
+    },
+    "system.runner.lowdiskspacethreshold": {
+      "value": "100"
+    },
+    "system.runnerEnvironment": {
+      "value": "self-hosted"
+    },
+    "system.runnerGroupName": {
+      "value": "Default"
+    }
+  },
+  "messageType": "RunnerJobRequest",
+  "plan": {
+    "scopeIdentifier": "00000000-0000-0000-0000-000000000000",
+    "planType": "actions",
+    "version": 0,
+    "planId": "a4e8ab04-3ab9-4170-bb7a-40e9db418b48",
+    "planGroup": null,
+    "artifactUri": null,
+    "artifactLocation": null,
+    "definition": null,
+    "owner": null
+  },
+  "timeline": {
+    "id": "a4e8ab04-3ab9-4170-bb7a-40e9db418b48",
+    "changeId": 0,
+    "location": null
+  },
+  "jobId": "cd3fa5dd-cfb9-5952-816a-a4a225e779bd",
+  "jobDisplayName": "self-hosted-deploy",
+  "jobName": "__default",
+  "requestId": 0,
+  "lockedUntil": "0001-01-01T00:00:00",
+  "resources": {
+    "endpoints": [
+      {
+        "data": {
+          "ServerId": "",
+          "ServerName": "",
+          "CacheServerUrl": "https://artifactcache.actions.githubusercontent.com/DDrTkuA3P4NIo0fVlaBSYAoRzJMxWDBmDb7jnqP4VO5sJlLjor/",
+          "FeedStreamUrl": "wss://results-receiver.actions.githubusercontent.com/_ws/ingest.sock",
+          "ResultsServiceUrl": "https://results-receiver.actions.githubusercontent.com/",
+          "PipelinesServiceUrl": "https://pipelinesghubeus15.actions.githubusercontent.com/DDrTkuA3P4NIo0fVlaBSYAoRzJMxWDBmDb7jnqP4VO5sJlLjor/",
+          "GenerateIdTokenUrl": ""
+        },
+        "name": "SystemVssConnection",
+        "url": "https://run-actions-3-azure-eastus.actions.githubusercontent.com/136/",
+        "authorization": {
+          "parameters": {
+            "AccessToken": "***"
+          },
+          "scheme": "OAuth"
+        },
+        "isShared": false,
+        "isReady": true
+      }
+    ]
+  },
+  "contextData": {
+    "github": {
+      "t": 2,
+      "d": [
+        {
+          "k": "ref",
+          "v": "refs/heads/master"
+        },
+        {
+          "k": "sha",
+          "v": "85bba8d1bbd850609e840d9fab5563295ba54a45"
+        },
+        {
+          "k": "repository",
+          "v": "anupsharma329/node-js-sample"
+        },
+        {
+          "k": "repository_owner",
+          "v": "anupsharma329"
+        },
+        {
+          "k": "repository_owner_id",
+          "v": "68842014"
+        },
+        {
+          "k": "repositoryUrl",
+          "v": "git://github.com/anupsharma329/node-js-sample.git"
+        },
+        {
+          "k": "run_id",
+          "v": "16264226382"
+        },
+        {
+          "k": "run_number",
+          "v": "3"
+        },
+        {
+          "k": "retention_days",
+          "v": "90"
+        },
+        {
+          "k": "run_attempt",
+          "v": "1"
+        },
+        {
+          "k": "artifact_cache_size_limit",
+          "v": "10"
+        },
+        {
+          "k": "repository_visibility",
+          "v": "public"
+        },
+        {
+          "k": "actor_id",
+          "v": "68842014"
+        },
+        {
+          "k": "actor",
+          "v": "anupsharma329"
+        },
+        {
+          "k": "workflow",
+          "v": "CI/CD Pipeline"
+        },
+        {
+          "k": "head_ref",
+          "v": ""
+        },
+        {
+          "k": "base_ref",
+          "v": ""
+        },
+        {
+          "k": "event_name",
+          "v": "push"
+        },
+        {
+          "k": "server_url",
+          "v": "https://github.com"
+        },
+        {
+          "k": "api_url",
+          "v": "https://api.github.com"
+        },
+        {
+          "k": "graphql_url",
+          "v": "https://api.github.com/graphql"
+        },
+        {
+          "k": "ref_name",
+          "v": "master"
+        },
+        {
+          "k": "ref_protected",
+          "v": false
+        },
+        {
+          "k": "ref_type",
+          "v": "branch"
+        },
+        {
+          "k": "secret_source",
+          "v": "Actions"
+        },
+        {
+          "k": "event",
+          "v": {
+            "t": 2,
+            "d": [
+              {
+                "k": "after",
+                "v": "85bba8d1bbd850609e840d9fab5563295ba54a45"
+              },
+              {
+                "k": "base_ref",
+                "v": null
+              },
+              {
+                "k": "before",
+                "v": "4f5b6c1cfb8e05962b4d11aa3e048eec5098d07d"
+              },
+              {
+                "k": "commits",
+                "v": {
+                  "t": 1,
+                  "a": [
+                    {
+                      "t": 2,
+                      "d": [
+                        {
+                          "k": "author",
+                          "v": {
+                            "t": 2,
+                            "d": [
+                              {
+                                "k": "email",
+                                "v": "anupsharma329@gmail.com"
+                              },
+                              {
+                                "k": "name",
+                                "v": "anupsharma329"
+                              },
+                              {
+                                "k": "username",
+                                "v": "anupsharma329"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "k": "committer",
+                          "v": {
+                            "t": 2,
+                            "d": [
+                              {
+                                "k": "email",
+                                "v": "anupsharma329@gmail.com"
+                              },
+                              {
+                                "k": "name",
+                                "v": "anupsharma329"
+                              },
+                              {
+                                "k": "username",
+                                "v": "anupsharma329"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "k": "distinct",
+                          "v": true
+                        },
+                        {
+                          "k": "id",
+                          "v": "85bba8d1bbd850609e840d9fab5563295ba54a45"
+                        },
+                        {
+                          "k": "message",
+                          "v": "mewcr"
+                        },
+                        {
+                          "k": "timestamp",
+                          "v": "2025-07-14T15:48:06+05:30"
+                        },
+                        {
+                          "k": "tree_id",
+                          "v": "51a0d1d23b12e5643a3d8d599922a6c054c9655f"
+                        },
+                        {
+                          "k": "url",
+                          "v": "https://github.com/anupsharma329/node-js-sample/commit/85bba8d1bbd850609e840d9fab5563295ba54a45"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "compare",
+                "v": "https://github.com/anupsharma329/node-js-sample/compare/4f5b6c1cfb8e...85bba8d1bbd8"
+              },
+              {
+                "k": "created",
+                "v": false
+              },
+              {
+                "k": "deleted",
+                "v": false
+              },
+              {
+                "k": "forced",
+                "v": false
+              },
+              {
+                "k": "head_commit",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "author",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "email",
+                            "v": "anupsharma329@gmail.com"
+                          },
+                          {
+                            "k": "name",
+                            "v": "anupsharma329"
+                          },
+                          {
+                            "k": "username",
+                            "v": "anupsharma329"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "committer",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "email",
+                            "v": "anupsharma329@gmail.com"
+                          },
+                          {
+                            "k": "name",
+                            "v": "anupsharma329"
+                          },
+                          {
+                            "k": "username",
+                            "v": "anupsharma329"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "distinct",
+                      "v": true
+                    },
+                    {
+                      "k": "id",
+                      "v": "85bba8d1bbd850609e840d9fab5563295ba54a45"
+                    },
+                    {
+                      "k": "message",
+                      "v": "mewcr"
+                    },
+                    {
+                      "k": "timestamp",
+                      "v": "2025-07-14T15:48:06+05:30"
+                    },
+                    {
+                      "k": "tree_id",
+                      "v": "51a0d1d23b12e5643a3d8d599922a6c054c9655f"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://github.com/anupsharma329/node-js-sample/commit/85bba8d1bbd850609e840d9fab5563295ba54a45"
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "pusher",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "email",
+                      "v": "68842014+anupsharma329@users.noreply.github.com"
+                    },
+                    {
+                      "k": "name",
+                      "v": "anupsharma329"
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "ref",
+                "v": "refs/heads/master"
+              },
+              {
+                "k": "repository",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "allow_forking",
+                      "v": true
+                    },
+                    {
+                      "k": "archive_url",
+                      "v": "https://api.github.com/repos/anupsharma329/node-js-sample/{archive_format}{/ref}"
+                    },
+                    {
+                      "k": "archived",
+                      "v": false
+                    },
+                    {
+                      "k": "assignees_url",
+                      "v": "https://api.github.com/repos/anupsharma329/node-js-sample/assignees{/user}"
+                    },
+                    {
+                      "k": "blobs_url",
+                      "v": "https://api.github.com/repos/anupsharma329/node-js-sample/git/blobs{/sha}"
+                    },
+                    {
+                      "k": "branches_url",
+                      "v": "https://api.github.com/repos/anupsharma329/node-js-sample/branches{/branch}"
+                    },
+                    {
+                      "k": "clone_url",
+                      "v": "https://github.com/anupsharma329/node-js-sample.git"
+                    },
+                    {
+                      "k": "collaborators_url",
+                      "v": "https://api.github.com/repos/anupsharma329/node-js-sample/collaborators{/collaborator}"
+                    },
+                    {
+                      "k": "comments_url",
+                      "v": "https://api.github.com/repos/anupsharma329/node-js-sample/comments{/number}"
+                    },
+                    {
+                      "k": "commits_url",
+                      "v": "https://api.github.com/repos/anupsharma329/node-js-sample/commits{/sha}"
+                    },
+                    {
+                      "k": "compare_url",
+                      "v": "https://api.github.com/repos/anupsharma329/node-js-sample/compare/{base}...{head}"
+                    },
+                    {
+                      "k": "contents_url",
+                      "v": "https://api.github.com/repos/anupsharma329/node-js-sample/contents/{+path}"
+                    },
+                    {
+                      "k": "contributors_url",
+                      "v": "https://api.github.com/repos/anupsharma329/node-js-sample/contributors"
+                    },
+                    {
+                      "k": "created_at",
+                      "v": 1752404502.0
+                    },
+                    {
+                      "k": "default_branch",
+                      "v": "master"
+                    },
+                    {
+                      "k": "deployments_url",
+                      "v": "https://api.github.com/repos/anupsharma329/node-js-sample/deployments"
+                    },
+                    {
+                      "k": "description",
+                      "v": "This repository is deprecated. Head over to https://github.com/heroku/node-js-getting-started"
+                    },
+                    {
+                      "k": "disabled",
+                      "v": false
+                    },
+                    {
+                      "k": "downloads_url",
+                      "v": "https://api.github.com/repos/anupsharma329/node-js-sample/downloads"
+                    },
+                    {
+                      "k": "events_url",
+                      "v": "https://api.github.com/repos/anupsharma329/node-js-sample/events"
+                    },
+                    {
+                      "k": "fork",
+                      "v": true
+                    },
+                    {
+                      "k": "forks",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "forks_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "forks_url",
+                      "v": "https://api.github.com/repos/anupsharma329/node-js-sample/forks"
+                    },
+                    {
+                      "k": "full_name",
+                      "v": "anupsharma329/node-js-sample"
+                    },
+                    {
+                      "k": "git_commits_url",
+                      "v": "https://api.github.com/repos/anupsharma329/node-js-sample/git/commits{/sha}"
+                    },
+                    {
+                      "k": "git_refs_url",
+                      "v": "https://api.github.com/repos/anupsharma329/node-js-sample/git/refs{/sha}"
+                    },
+                    {
+                      "k": "git_tags_url",
+                      "v": "https://api.github.com/repos/anupsharma329/node-js-sample/git/tags{/sha}"
+                    },
+                    {
+                      "k": "git_url",
+                      "v": "git://github.com/anupsharma329/node-js-sample.git"
+                    },
+                    {
+                      "k": "has_discussions",
+                      "v": false
+                    },
+                    {
+                      "k": "has_downloads",
+                      "v": true
+                    },
+                    {
+                      "k": "has_issues",
+                      "v": false
+                    },
+                    {
+                      "k": "has_pages",
+                      "v": false
+                    },
+                    {
+                      "k": "has_projects",
+                      "v": true
+                    },
+                    {
+                      "k": "has_wiki",
+                      "v": true
+                    },
+                    {
+                      "k": "homepage",
+                      "v": ""
+                    },
+                    {
+                      "k": "hooks_url",
+                      "v": "https://api.github.com/repos/anupsharma329/node-js-sample/hooks"
+                    },
+                    {
+                      "k": "html_url",
+                      "v": "https://github.com/anupsharma329/node-js-sample"
+                    },
+                    {
+                      "k": "id",
+                      "v": 1018924396.0
+                    },
+                    {
+                      "k": "is_template",
+                      "v": false
+                    },
+                    {
+                      "k": "issue_comment_url",
+                      "v": "https://api.github.com/repos/anupsharma329/node-js-sample/issues/comments{/number}"
+                    },
+                    {
+                      "k": "issue_events_url",
+                      "v": "https://api.github.com/repos/anupsharma329/node-js-sample/issues/events{/number}"
+                    },
+                    {
+                      "k": "issues_url",
+                      "v": "https://api.github.com/repos/anupsharma329/node-js-sample/issues{/number}"
+                    },
+                    {
+                      "k": "keys_url",
+                      "v": "https://api.github.com/repos/anupsharma329/node-js-sample/keys{/key_id}"
+                    },
+                    {
+                      "k": "labels_url",
+                      "v": "https://api.github.com/repos/anupsharma329/node-js-sample/labels{/name}"
+                    },
+                    {
+                      "k": "language",
+                      "v": "JavaScript"
+                    },
+                    {
+                      "k": "languages_url",
+                      "v": "https://api.github.com/repos/anupsharma329/node-js-sample/languages"
+                    },
+                    {
+                      "k": "license",
+                      "v": null
+                    },
+                    {
+                      "k": "master_branch",
+                      "v": "master"
+                    },
+                    {
+                      "k": "merges_url",
+                      "v": "https://api.github.com/repos/anupsharma329/node-js-sample/merges"
+                    },
+                    {
+                      "k": "milestones_url",
+                      "v": "https://api.github.com/repos/anupsharma329/node-js-sample/milestones{/number}"
+                    },
+                    {
+                      "k": "mirror_url",
+                      "v": null
+                    },
+                    {
+                      "k": "name",
+                      "v": "node-js-sample"
+                    },
+                    {
+                      "k": "node_id",
+                      "v": "R_kgDOPLuNbA"
+                    },
+                    {
+                      "k": "notifications_url",
+                      "v": "https://api.github.com/repos/anupsharma329/node-js-sample/notifications{?since,all,participating}"
+                    },
+                    {
+                      "k": "open_issues",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "open_issues_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "owner",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "avatar_url",
+                            "v": "https://avatars.githubusercontent.com/u/68842014?v=4"
+                          },
+                          {
+                            "k": "email",
+                            "v": "68842014+anupsharma329@users.noreply.github.com"
+                          },
+                          {
+                            "k": "events_url",
+                            "v": "https://api.github.com/users/anupsharma329/events{/privacy}"
+                          },
+                          {
+                            "k": "followers_url",
+                            "v": "https://api.github.com/users/anupsharma329/followers"
+                          },
+                          {
+                            "k": "following_url",
+                            "v": "https://api.github.com/users/anupsharma329/following{/other_user}"
+                          },
+                          {
+                            "k": "gists_url",
+                            "v": "https://api.github.com/users/anupsharma329/gists{/gist_id}"
+                          },
+                          {
+                            "k": "gravatar_id",
+                            "v": ""
+                          },
+                          {
+                            "k": "html_url",
+                            "v": "https://github.com/anupsharma329"
+                          },
+                          {
+                            "k": "id",
+                            "v": 68842014.0
+                          },
+                          {
+                            "k": "login",
+                            "v": "anupsharma329"
+                          },
+                          {
+                            "k": "name",
+                            "v": "anupsharma329"
+                          },
+                          {
+                            "k": "node_id",
+                            "v": "MDQ6VXNlcjY4ODQyMDE0"
+                          },
+                          {
+                            "k": "organizations_url",
+                            "v": "https://api.github.com/users/anupsharma329/orgs"
+                          },
+                          {
+                            "k": "received_events_url",
+                            "v": "https://api.github.com/users/anupsharma329/received_events"
+                          },
+                          {
+                            "k": "repos_url",
+                            "v": "https://api.github.com/users/anupsharma329/repos"
+                          },
+                          {
+                            "k": "site_admin",
+                            "v": false
+                          },
+                          {
+                            "k": "starred_url",
+                            "v": "https://api.github.com/users/anupsharma329/starred{/owner}{/repo}"
+                          },
+                          {
+                            "k": "subscriptions_url",
+                            "v": "https://api.github.com/users/anupsharma329/subscriptions"
+                          },
+                          {
+                            "k": "type",
+                            "v": "User"
+                          },
+                          {
+                            "k": "url",
+                            "v": "https://api.github.com/users/anupsharma329"
+                          },
+                          {
+                            "k": "user_view_type",
+                            "v": "public"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "private",
+                      "v": false
+                    },
+                    {
+                      "k": "pulls_url",
+                      "v": "https://api.github.com/repos/anupsharma329/node-js-sample/pulls{/number}"
+                    },
+                    {
+                      "k": "pushed_at",
+                      "v": 1752488328.0
+                    },
+                    {
+                      "k": "releases_url",
+                      "v": "https://api.github.com/repos/anupsharma329/node-js-sample/releases{/id}"
+                    },
+                    {
+                      "k": "size",
+                      "v": 220.0
+                    },
+                    {
+                      "k": "ssh_url",
+                      "v": "git@github.com:anupsharma329/node-js-sample.git"
+                    },
+                    {
+                      "k": "stargazers",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "stargazers_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "stargazers_url",
+                      "v": "https://api.github.com/repos/anupsharma329/node-js-sample/stargazers"
+                    },
+                    {
+                      "k": "statuses_url",
+                      "v": "https://api.github.com/repos/anupsharma329/node-js-sample/statuses/{sha}"
+                    },
+                    {
+                      "k": "subscribers_url",
+                      "v": "https://api.github.com/repos/anupsharma329/node-js-sample/subscribers"
+                    },
+                    {
+                      "k": "subscription_url",
+                      "v": "https://api.github.com/repos/anupsharma329/node-js-sample/subscription"
+                    },
+                    {
+                      "k": "svn_url",
+                      "v": "https://github.com/anupsharma329/node-js-sample"
+                    },
+                    {
+                      "k": "tags_url",
+                      "v": "https://api.github.com/repos/anupsharma329/node-js-sample/tags"
+                    },
+                    {
+                      "k": "teams_url",
+                      "v": "https://api.github.com/repos/anupsharma329/node-js-sample/teams"
+                    },
+                    {
+                      "k": "topics",
+                      "v": {
+                        "t": 1
+                      }
+                    },
+                    {
+                      "k": "trees_url",
+                      "v": "https://api.github.com/repos/anupsharma329/node-js-sample/git/trees{/sha}"
+                    },
+                    {
+                      "k": "updated_at",
+                      "v": "2025-07-14T10:06:07Z"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://api.github.com/repos/anupsharma329/node-js-sample"
+                    },
+                    {
+                      "k": "visibility",
+                      "v": "public"
+                    },
+                    {
+                      "k": "watchers",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "watchers_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "web_commit_signoff_required",
+                      "v": true
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "sender",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "avatar_url",
+                      "v": "https://avatars.githubusercontent.com/u/68842014?v=4"
+                    },
+                    {
+                      "k": "events_url",
+                      "v": "https://api.github.com/users/anupsharma329/events{/privacy}"
+                    },
+                    {
+                      "k": "followers_url",
+                      "v": "https://api.github.com/users/anupsharma329/followers"
+                    },
+                    {
+                      "k": "following_url",
+                      "v": "https://api.github.com/users/anupsharma329/following{/other_user}"
+                    },
+                    {
+                      "k": "gists_url",
+                      "v": "https://api.github.com/users/anupsharma329/gists{/gist_id}"
+                    },
+                    {
+                      "k": "gravatar_id",
+                      "v": ""
+                    },
+                    {
+                      "k": "html_url",
+                      "v": "https://github.com/anupsharma329"
+                    },
+                    {
+                      "k": "id",
+                      "v": 68842014.0
+                    },
+                    {
+                      "k": "login",
+                      "v": "anupsharma329"
+                    },
+                    {
+                      "k": "node_id",
+                      "v": "MDQ6VXNlcjY4ODQyMDE0"
+                    },
+                    {
+                      "k": "organizations_url",
+                      "v": "https://api.github.com/users/anupsharma329/orgs"
+                    },
+                    {
+                      "k": "received_events_url",
+                      "v": "https://api.github.com/users/anupsharma329/received_events"
+                    },
+                    {
+                      "k": "repos_url",
+                      "v": "https://api.github.com/users/anupsharma329/repos"
+                    },
+                    {
+                      "k": "site_admin",
+                      "v": false
+                    },
+                    {
+                      "k": "starred_url",
+                      "v": "https://api.github.com/users/anupsharma329/starred{/owner}{/repo}"
+                    },
+                    {
+                      "k": "subscriptions_url",
+                      "v": "https://api.github.com/users/anupsharma329/subscriptions"
+                    },
+                    {
+                      "k": "type",
+                      "v": "User"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://api.github.com/users/anupsharma329"
+                    },
+                    {
+                      "k": "user_view_type",
+                      "v": "public"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "k": "workflow_ref",
+          "v": "anupsharma329/node-js-sample/.github/workflows/node.js.yml@refs/heads/master"
+        },
+        {
+          "k": "workflow_sha",
+          "v": "85bba8d1bbd850609e840d9fab5563295ba54a45"
+        },
+        {
+          "k": "repository_id",
+          "v": "1018924396"
+        },
+        {
+          "k": "triggering_actor",
+          "v": "anupsharma329"
+        }
+      ]
+    },
+    "inputs": {
+      "t": 2
+    },
+    "matrix": null,
+    "needs": {
+      "t": 2,
+      "d": [
+        {
+          "k": "build-and-deploy",
+          "v": {
+            "t": 2,
+            "d": [
+              {
+                "k": "result",
+                "v": "success"
+              },
+              {
+                "k": "outputs",
+                "v": {
+                  "t": 2
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "strategy": {
+      "t": 2,
+      "d": [
+        {
+          "k": "fail-fast",
+          "v": true
+        },
+        {
+          "k": "job-index",
+          "v": 0.0
+        },
+        {
+          "k": "job-total",
+          "v": 1.0
+        },
+        {
+          "k": "max-parallel",
+          "v": 1.0
+        }
+      ]
+    },
+    "vars": {
+      "t": 2
+    }
+  },
+  "billingOwnerId": "U_kgDOBBpyHg"
+}
+[2025-07-14 10:20:00Z INFO JobRunner] Job ID cd3fa5dd-cfb9-5952-816a-a4a225e779bd
+[2025-07-14 10:20:00Z INFO ConfigurationStore] currentAssemblyLocation: /Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin/Runner.Worker.dll
+[2025-07-14 10:20:00Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:00Z INFO ConfigurationStore] binPath: /Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin
+[2025-07-14 10:20:00Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:00Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:00Z INFO ConfigurationStore] RootFolder: /Users/anupsharma/devops/sampletask/node-js-sample/actions-runner
+[2025-07-14 10:20:00Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:00Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:00Z INFO HostContext] Well known config file 'Runner': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/.runner'
+[2025-07-14 10:20:00Z INFO ConfigurationStore] ConfigFilePath: /Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/.runner
+[2025-07-14 10:20:00Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:00Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:00Z INFO HostContext] Well known config file 'MigratedRunner': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/.runner_migrated'
+[2025-07-14 10:20:00Z INFO ConfigurationStore] MigratedConfigFilePath: /Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/.runner_migrated
+[2025-07-14 10:20:00Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:00Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:00Z INFO HostContext] Well known config file 'Credentials': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/.credentials'
+[2025-07-14 10:20:00Z INFO ConfigurationStore] CredFilePath: /Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/.credentials
+[2025-07-14 10:20:00Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:00Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:00Z INFO HostContext] Well known config file 'MigratedCredentials': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/.credentials_migrated'
+[2025-07-14 10:20:00Z INFO ConfigurationStore] MigratedCredFilePath: /Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/.credentials_migrated
+[2025-07-14 10:20:00Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:00Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:00Z INFO HostContext] Well known config file 'Service': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/.service'
+[2025-07-14 10:20:00Z INFO ConfigurationStore] ServiceConfigFilePath: /Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/.service
+[2025-07-14 10:20:00Z INFO ConfigurationStore] Read setting file: 397 chars
+[2025-07-14 10:20:00Z INFO JobRunner] Initializing launch client
+[2025-07-14 10:20:00Z INFO JobServerQueue] Initializing results client
+[2025-07-14 10:20:01Z INFO ResultServer] Creating websocket client ...wss://results-receiver.actions.githubusercontent.com/_ws/ingest.sock
+[2025-07-14 10:20:01Z INFO ResultServer] Attempting to start websocket client with delay 00:00:00.
+[2025-07-14 10:20:01Z INFO JobServerQueue] Start process web console line queue.
+[2025-07-14 10:20:01Z INFO JobServerQueue] Start process file upload queue.
+[2025-07-14 10:20:01Z INFO JobServerQueue] Start results file upload queue.
+[2025-07-14 10:20:01Z INFO JobServerQueue] Starting results-based upload queue...
+[2025-07-14 10:20:01Z INFO JobServerQueue] Start process timeline update queue.
+[2025-07-14 10:20:01Z INFO ExecutionContext] Initializing Job context
+[2025-07-14 10:20:01Z INFO ExecutionContext] Initialize GitHub context
+[2025-07-14 10:20:01Z INFO ExecutionContext] Initialize Env context
+[2025-07-14 10:20:01Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:01Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:01Z INFO HostContext] Well known directory 'Diag': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_diag'
+[2025-07-14 10:20:01Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:01Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:01Z INFO HostContext] Well known directory 'Diag': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_diag'
+[2025-07-14 10:20:01Z INFO JobRunner] Starting the job execution context.
+[2025-07-14 10:20:01Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:01Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:01Z INFO HostContext] Well known directory 'Work': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work'
+[2025-07-14 10:20:01Z INFO JobRunner] Validating directory permissions for: '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work'
+[2025-07-14 10:20:01Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:01Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:01Z INFO HostContext] Well known directory 'Work': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work'
+[2025-07-14 10:20:01Z INFO HostContext] Well known directory 'Tools': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work/_tool'
+[2025-07-14 10:20:01Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:01Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:01Z INFO HostContext] Well known directory 'Work': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work'
+[2025-07-14 10:20:01Z INFO HostContext] Well known directory 'Temp': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work/_temp'
+[2025-07-14 10:20:02Z INFO JobRunner] Getting job extension.
+[2025-07-14 10:20:02Z INFO JobRunner] Initialize job. Getting all job steps.
+[2025-07-14 10:20:02Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:02Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:02Z INFO HostContext] Well known directory 'Diag': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_diag'
+[2025-07-14 10:20:02Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:02Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:02Z INFO HostContext] Well known directory 'Diag': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_diag'
+[2025-07-14 10:20:02Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:02Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:02Z INFO HostContext] Well known config file 'Credentials': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/.credentials'
+[2025-07-14 10:20:02Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:02Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:02Z INFO HostContext] Well known config file 'SetupInfo': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/.setup_info'
+[2025-07-14 10:20:02Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:02Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:02Z INFO HostContext] Well known directory 'Work': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work'
+[2025-07-14 10:20:02Z INFO PipelineDirectoryManager] Loading tracking config if exists: /Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work/_PipelineMapping/anupsharma329/node-js-sample/PipelineFolder.json
+[2025-07-14 10:20:02Z INFO PipelineDirectoryManager] Creating a new tracking config file.
+[2025-07-14 10:20:02Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:02Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:02Z INFO HostContext] Well known directory 'Work': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work'
+[2025-07-14 10:20:02Z INFO PipelineDirectoryManager] Creating pipeline directory.
+[2025-07-14 10:20:02Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:02Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:02Z INFO HostContext] Well known directory 'Work': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work'
+[2025-07-14 10:20:02Z INFO PipelineDirectoryManager] Creating workspace directory.
+[2025-07-14 10:20:02Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:02Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:02Z INFO HostContext] Well known directory 'Work': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work'
+[2025-07-14 10:20:02Z INFO JobExtension] Downloading actions
+[2025-07-14 10:20:02Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:02Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:02Z INFO HostContext] Well known directory 'Work': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work'
+[2025-07-14 10:20:02Z INFO HostContext] Well known directory 'Actions': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work/_actions'
+[2025-07-14 10:20:02Z INFO Worker] Listening for cancel message from the channel.
+[2025-07-14 10:20:02Z INFO Worker] Waiting for the job to complete or for a cancel message from the channel.
+[2025-07-14 10:20:02Z INFO ResultServer] Successfully started websocket client.
+[2025-07-14 10:20:02Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'e718f1e6-cb09-41a3-a82d-965d704bbcde', success rate: 1/1.
+[2025-07-14 10:20:03Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'e718f1e6-cb09-41a3-a82d-965d704bbcde', success rate: 1/1.
+[2025-07-14 10:20:03Z INFO JobServerQueue] Job timeline record has been updated for the first time.
+[2025-07-14 10:20:03Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:03Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:03Z INFO HostContext] Well known directory 'Work': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work'
+[2025-07-14 10:20:03Z INFO HostContext] Well known directory 'Actions': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work/_actions'
+[2025-07-14 10:20:03Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:03Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:03Z INFO HostContext] Well known directory 'Work': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work'
+[2025-07-14 10:20:03Z INFO HostContext] Well known directory 'Actions': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work/_actions'
+[2025-07-14 10:20:03Z INFO ActionManager] Save archive 'https://api.github.com/repos/actions/checkout/tarball/f43a0e5ff2bd294095638e18286ca9a3d1956744' into /Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work/_actions/_temp_d67e32c1-c1f2-44a1-acec-0cec98aef1b6/32b736ef-3a03-4f63-aac8-33e695a7dd9b.tar.gz.
+[2025-07-14 10:20:03Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'e718f1e6-cb09-41a3-a82d-965d704bbcde', success rate: 1/1.
+[2025-07-14 10:20:04Z INFO ActionManager] Request URL: https://api.github.com/repos/actions/checkout/tarball/f43a0e5ff2bd294095638e18286ca9a3d1956744 X-GitHub-Request-Id: 8906:303514:266AE:1FBFA7:6874D9D3 Http Status: OK
+[2025-07-14 10:20:04Z INFO ActionManager] Which2: 'tar'
+[2025-07-14 10:20:04Z INFO ActionManager] Location: '/usr/bin/tar'
+[2025-07-14 10:20:04Z INFO ProcessInvokerWrapper] Starting process:
+[2025-07-14 10:20:04Z INFO ProcessInvokerWrapper]   File name: '/usr/bin/tar'
+[2025-07-14 10:20:04Z INFO ProcessInvokerWrapper]   Arguments: '-xzf "/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work/_actions/_temp_d67e32c1-c1f2-44a1-acec-0cec98aef1b6/32b736ef-3a03-4f63-aac8-33e695a7dd9b.tar.gz"'
+[2025-07-14 10:20:04Z INFO ProcessInvokerWrapper]   Working directory: '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work/_actions/_temp_d67e32c1-c1f2-44a1-acec-0cec98aef1b6/_staging'
+[2025-07-14 10:20:04Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-07-14 10:20:04Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-07-14 10:20:04Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-07-14 10:20:04Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-07-14 10:20:04Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2025-07-14 10:20:04Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-07-14 10:20:04Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-07-14 10:20:04Z INFO ProcessInvokerWrapper] Process started with process id 65938, waiting for process exit.
+[2025-07-14 10:20:05Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-14 10:20:05Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-14 10:20:05Z INFO ProcessInvokerWrapper] Finished process 65938 with exit code 0, and elapsed time 00:00:01.1097721.
+[2025-07-14 10:20:05Z INFO ActionManager] Finished getting action repository.
+[2025-07-14 10:20:05Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:05Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:05Z INFO HostContext] Well known directory 'Work': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work'
+[2025-07-14 10:20:05Z INFO HostContext] Well known directory 'Actions': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work/_actions'
+[2025-07-14 10:20:05Z INFO ActionManifestManager] Load schema file with definitions: [
+  "null",
+  "boolean",
+  "number",
+  "string",
+  "sequence",
+  "mapping",
+  "any",
+  "action-root",
+  "inputs",
+  "input",
+  "outputs",
+  "output-definition",
+  "runs",
+  "container-runs",
+  "container-runs-args",
+  "container-runs-env",
+  "node-runs",
+  "plugin-runs",
+  "composite-runs",
+  "composite-steps",
+  "composite-step",
+  "run-step",
+  "uses-step",
+  "container-runs-context",
+  "output-value",
+  "input-default-context",
+  "non-empty-string",
+  "string-steps-context",
+  "boolean-steps-context",
+  "step-env",
+  "step-if",
+  "step-with"
+]
+[2025-07-14 10:20:05Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:05Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:05Z INFO HostContext] Well known directory 'Work': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work'
+[2025-07-14 10:20:05Z INFO HostContext] Well known directory 'Actions': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work/_actions'
+[2025-07-14 10:20:05Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 50,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 53,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 56,
+          "col": 3,
+          "lit": "sparse-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 60,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 61,
+          "col": 3,
+          "lit": "sparse-checkout-cone-mode"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 64,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 65,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 67,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 68,
+          "col": 3,
+          "lit": "fetch-tags"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 71,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 74,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 82,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 83,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 85,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 86,
+          "col": 3,
+          "lit": "github-server-url"
+        },
+        "value": ""
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node16",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2025-07-14 10:20:05Z INFO ActionManager] Action node.js file: dist/index.js, no more preparation.
+[2025-07-14 10:20:05Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:05Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:05Z INFO HostContext] Well known directory 'Work': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work'
+[2025-07-14 10:20:05Z INFO HostContext] Well known directory 'Actions': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work/_actions'
+[2025-07-14 10:20:05Z INFO ActionManager] Load action that reference repository from '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work/_actions/actions/checkout/v3'
+[2025-07-14 10:20:05Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:05Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:05Z INFO HostContext] Well known directory 'Work': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work'
+[2025-07-14 10:20:05Z INFO HostContext] Well known directory 'Actions': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work/_actions'
+[2025-07-14 10:20:05Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 50,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 53,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 56,
+          "col": 3,
+          "lit": "sparse-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 60,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 61,
+          "col": 3,
+          "lit": "sparse-checkout-cone-mode"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 64,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 65,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 67,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 68,
+          "col": 3,
+          "lit": "fetch-tags"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 71,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 74,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 82,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 83,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 85,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 86,
+          "col": 3,
+          "lit": "github-server-url"
+        },
+        "value": ""
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node16",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2025-07-14 10:20:05Z INFO ActionManager] Action pre node.js file: N/A.
+[2025-07-14 10:20:05Z INFO ActionManager] Action node.js file: dist/index.js.
+[2025-07-14 10:20:05Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2025-07-14 10:20:05Z INFO JobExtension] Adding .
+[2025-07-14 10:20:05Z INFO JobExtension] Adding .
+[2025-07-14 10:20:05Z INFO JobExtension] Adding .
+[2025-07-14 10:20:05Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:05Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:05Z INFO HostContext] Well known directory 'Diag': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_diag'
+[2025-07-14 10:20:05Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:05Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:05Z INFO HostContext] Well known directory 'Diag': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_diag'
+[2025-07-14 10:20:05Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:05Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:05Z INFO HostContext] Well known directory 'Diag': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_diag'
+[2025-07-14 10:20:05Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:05Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:05Z INFO HostContext] Well known directory 'Diag': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_diag'
+[2025-07-14 10:20:05Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:05Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:05Z INFO HostContext] Well known directory 'Diag': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_diag'
+[2025-07-14 10:20:05Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:05Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:05Z INFO HostContext] Well known directory 'Diag': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_diag'
+[2025-07-14 10:20:05Z INFO JobExtension] Total accessible running process: 311.
+[2025-07-14 10:20:05Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'e718f1e6-cb09-41a3-a82d-965d704bbcde', success rate: 1/1.
+[2025-07-14 10:20:05Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:05Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:05Z INFO HostContext] Well known directory 'Work': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work'
+[2025-07-14 10:20:05Z INFO JobExtension] Start checking service connectivity in background.
+[2025-07-14 10:20:05Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "setup_job",
+  "type": "runner",
+  "stage": "Pre",
+  "stepId": "e718f1e6-cb09-41a3-a82d-965d704bbcde",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 4,
+  "startTime": "2025-07-14T10:20:02.025382Z",
+  "finishTime": "2025-07-14T10:20:05.978545Z"
+}.
+[2025-07-14 10:20:05Z INFO JobRunner] Total job steps: 3.
+[2025-07-14 10:20:05Z INFO JobRunner] Run all job steps.
+[2025-07-14 10:20:06Z INFO StepsRunner] Processing step: DisplayName='Checkout code'
+[2025-07-14 10:20:06Z INFO StepsRunner] Evaluating: success()
+[2025-07-14 10:20:06Z INFO StepsRunner] Result: true
+[2025-07-14 10:20:06Z INFO StepsRunner] Starting the step.
+[2025-07-14 10:20:06Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:06Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:06Z INFO HostContext] Well known directory 'Work': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work'
+[2025-07-14 10:20:06Z INFO HostContext] Well known directory 'Actions': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work/_actions'
+[2025-07-14 10:20:06Z INFO ActionManager] Load action that reference repository from '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work/_actions/actions/checkout/v3'
+[2025-07-14 10:20:06Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:06Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:06Z INFO HostContext] Well known directory 'Work': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work'
+[2025-07-14 10:20:06Z INFO HostContext] Well known directory 'Actions': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work/_actions'
+[2025-07-14 10:20:06Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 50,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 53,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 56,
+          "col": 3,
+          "lit": "sparse-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 60,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 61,
+          "col": 3,
+          "lit": "sparse-checkout-cone-mode"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 64,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 65,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 67,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 68,
+          "col": 3,
+          "lit": "fetch-tags"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 71,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 74,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 82,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 83,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 85,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 86,
+          "col": 3,
+          "lit": "github-server-url"
+        },
+        "value": ""
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node16",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2025-07-14 10:20:06Z INFO ActionManager] Action pre node.js file: N/A.
+[2025-07-14 10:20:06Z INFO ActionManager] Action node.js file: dist/index.js.
+[2025-07-14 10:20:06Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2025-07-14 10:20:06Z INFO ExecutionContext] Reserve record order 5 to 8 for post job actions.
+[2025-07-14 10:20:06Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:06Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:06Z INFO HostContext] Well known directory 'Diag': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_diag'
+[2025-07-14 10:20:06Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:06Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:06Z INFO HostContext] Well known directory 'Diag': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_diag'
+[2025-07-14 10:20:06Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:06Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:06Z INFO HostContext] Well known directory 'Work': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work'
+[2025-07-14 10:20:06Z INFO HostContext] Well known directory 'Temp': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work/_temp'
+[2025-07-14 10:20:06Z INFO ExecutionContext] Write event payload to /Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work/_temp/_github_workflow/event.json
+[2025-07-14 10:20:06Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:06Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:06Z INFO HostContext] Well known directory 'Work': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work'
+[2025-07-14 10:20:06Z INFO HostContext] Well known directory 'Temp': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work/_temp'
+[2025-07-14 10:20:06Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2025-07-14 10:20:06Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddPathFileCommand, Runner.Worker
+[2025-07-14 10:20:06Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetEnvFileCommand, Runner.Worker
+[2025-07-14 10:20:06Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.CreateStepSummaryCommand, Runner.Worker
+[2025-07-14 10:20:06Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SaveStateFileCommand, Runner.Worker
+[2025-07-14 10:20:06Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetOutputFileCommand, Runner.Worker
+[2025-07-14 10:20:06Z INFO ActionManifestManager] Input 'repository': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 6,
+  "col": 14,
+  "lit": "anupsharma329/node-js-sample"
+}
+[2025-07-14 10:20:06Z INFO ActionManifestManager] Input 'ref': default value evaluate result: ""
+[2025-07-14 10:20:06Z INFO ActionManifestManager] Input 'token': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 24,
+  "col": 14,
+  "lit": "***"
+}
+[2025-07-14 10:20:06Z INFO ActionManifestManager] Input 'ssh-key': default value evaluate result: ""
+[2025-07-14 10:20:06Z INFO ActionManifestManager] Input 'ssh-known-hosts': default value evaluate result: ""
+[2025-07-14 10:20:06Z INFO ActionManifestManager] Input 'ssh-strict': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 47,
+  "col": 14,
+  "lit": "true"
+}
+[2025-07-14 10:20:06Z INFO ActionManifestManager] Input 'persist-credentials': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 50,
+  "col": 14,
+  "lit": "true"
+}
+[2025-07-14 10:20:06Z INFO ActionManifestManager] Input 'path': default value evaluate result: ""
+[2025-07-14 10:20:06Z INFO ActionManifestManager] Input 'clean': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 55,
+  "col": 14,
+  "lit": "true"
+}
+[2025-07-14 10:20:06Z INFO ActionManifestManager] Input 'sparse-checkout': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 60,
+  "col": 14,
+  "lit": ""
+}
+[2025-07-14 10:20:06Z INFO ActionManifestManager] Input 'sparse-checkout-cone-mode': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 64,
+  "col": 14,
+  "lit": "true"
+}
+[2025-07-14 10:20:06Z INFO ActionManifestManager] Input 'fetch-depth': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 67,
+  "col": 14,
+  "lit": "1"
+}
+[2025-07-14 10:20:06Z INFO ActionManifestManager] Input 'fetch-tags': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 70,
+  "col": 14,
+  "lit": "false"
+}
+[2025-07-14 10:20:06Z INFO ActionManifestManager] Input 'lfs': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 73,
+  "col": 14,
+  "lit": "false"
+}
+[2025-07-14 10:20:06Z INFO ActionManifestManager] Input 'submodules': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 82,
+  "col": 14,
+  "lit": "false"
+}
+[2025-07-14 10:20:06Z INFO ActionManifestManager] Input 'set-safe-directory': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 85,
+  "col": 14,
+  "lit": "true"
+}
+[2025-07-14 10:20:06Z INFO ActionManifestManager] Input 'github-server-url': default value evaluate result: ""
+[2025-07-14 10:20:06Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2025-07-14 10:20:06Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.InternalPluginSetRepoPathCommandExtension, Runner.Worker
+[2025-07-14 10:20:06Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetEnvCommandExtension, Runner.Worker
+[2025-07-14 10:20:06Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetOutputCommandExtension, Runner.Worker
+[2025-07-14 10:20:06Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SaveStateCommandExtension, Runner.Worker
+[2025-07-14 10:20:06Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddPathCommandExtension, Runner.Worker
+[2025-07-14 10:20:06Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddMaskCommandExtension, Runner.Worker
+[2025-07-14 10:20:06Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddMatcherCommandExtension, Runner.Worker
+[2025-07-14 10:20:06Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.RemoveMatcherCommandExtension, Runner.Worker
+[2025-07-14 10:20:06Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.WarningCommandExtension, Runner.Worker
+[2025-07-14 10:20:06Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.ErrorCommandExtension, Runner.Worker
+[2025-07-14 10:20:06Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.NoticeCommandExtension, Runner.Worker
+[2025-07-14 10:20:06Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.DebugCommandExtension, Runner.Worker
+[2025-07-14 10:20:06Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.GroupCommandExtension, Runner.Worker
+[2025-07-14 10:20:06Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.EndGroupCommandExtension, Runner.Worker
+[2025-07-14 10:20:06Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.EchoCommandExtension, Runner.Worker
+[2025-07-14 10:20:06Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2025-07-14 10:20:06Z INFO ActionCommandManager] Register action command extension for command set-env
+[2025-07-14 10:20:06Z INFO ActionCommandManager] Register action command extension for command set-output
+[2025-07-14 10:20:06Z INFO ActionCommandManager] Register action command extension for command save-state
+[2025-07-14 10:20:06Z INFO ActionCommandManager] Register action command extension for command add-path
+[2025-07-14 10:20:06Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2025-07-14 10:20:06Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2025-07-14 10:20:06Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2025-07-14 10:20:06Z INFO ActionCommandManager] Register action command extension for command warning
+[2025-07-14 10:20:06Z INFO ActionCommandManager] Register action command extension for command error
+[2025-07-14 10:20:06Z INFO ActionCommandManager] Register action command extension for command notice
+[2025-07-14 10:20:06Z INFO ActionCommandManager] Register action command extension for command debug
+[2025-07-14 10:20:06Z INFO ActionCommandManager] Register action command extension for command group
+[2025-07-14 10:20:06Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2025-07-14 10:20:06Z INFO ActionCommandManager] Register action command extension for command echo
+[2025-07-14 10:20:06Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:06Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:06Z INFO HostContext] Well known directory 'Externals': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/externals'
+[2025-07-14 10:20:06Z INFO ProcessInvokerWrapper] Starting process:
+[2025-07-14 10:20:06Z INFO ProcessInvokerWrapper]   File name: '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/externals/node20/bin/node'
+[2025-07-14 10:20:06Z INFO ProcessInvokerWrapper]   Arguments: '"/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work/_actions/actions/checkout/v3/dist/index.js"'
+[2025-07-14 10:20:06Z INFO ProcessInvokerWrapper]   Working directory: '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work/node-js-sample/node-js-sample'
+[2025-07-14 10:20:06Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-07-14 10:20:06Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-07-14 10:20:06Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-07-14 10:20:06Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-07-14 10:20:06Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2025-07-14 10:20:06Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-07-14 10:20:06Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-07-14 10:20:06Z INFO ProcessInvokerWrapper] Process started with process id 65951, waiting for process exit.
+[2025-07-14 10:20:06Z INFO JobServerQueue] Try to append 1 batches web console lines for record '52968da0-0bf0-4fe0-93fd-90058f69ed73', success rate: 1/1.
+[2025-07-14 10:20:06Z INFO JobServerQueue] Got a step log file to send to results service.
+[2025-07-14 10:20:06Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, /Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_diag/blocks/a4e8ab04-3ab9-4170-bb7a-40e9db418b48_e718f1e6-cb09-41a3-a82d-965d704bbcde.1
+[2025-07-14 10:20:06Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2025-07-14 10:20:08Z INFO JobServerQueue] Tried to upload 1 file(s) to results, success rate: 1/1.
+[2025-07-14 10:20:15Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:15Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:15Z INFO HostContext] Well known directory 'Work': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work'
+[2025-07-14 10:20:18Z INFO AddMaskCommandExtension] Add new secret mask with length of 76
+[2025-07-14 10:20:19Z INFO JobServerQueue] Try to append 1 batches web console lines for record '52968da0-0bf0-4fe0-93fd-90058f69ed73', success rate: 1/1.
+[2025-07-14 10:20:20Z INFO JobServerQueue] Try to append 1 batches web console lines for record '52968da0-0bf0-4fe0-93fd-90058f69ed73', success rate: 1/1.
+[2025-07-14 10:20:20Z INFO JobServerQueue] Try to append 1 batches web console lines for record '52968da0-0bf0-4fe0-93fd-90058f69ed73', success rate: 1/1.
+[2025-07-14 10:20:21Z INFO JobServerQueue] Try to append 1 batches web console lines for record '52968da0-0bf0-4fe0-93fd-90058f69ed73', success rate: 1/1.
+[2025-07-14 10:20:21Z INFO JobServerQueue] Try to append 3 batches web console lines for record '52968da0-0bf0-4fe0-93fd-90058f69ed73', success rate: 3/3.
+[2025-07-14 10:20:22Z INFO JobServerQueue] Try to append 1 batches web console lines for record '52968da0-0bf0-4fe0-93fd-90058f69ed73', success rate: 1/1.
+[2025-07-14 10:20:23Z INFO JobServerQueue] Try to append 1 batches web console lines for record '52968da0-0bf0-4fe0-93fd-90058f69ed73', success rate: 1/1.
+[2025-07-14 10:20:24Z INFO JobServerQueue] Try to append 1 batches web console lines for record '52968da0-0bf0-4fe0-93fd-90058f69ed73', success rate: 1/1.
+[2025-07-14 10:20:25Z INFO JobServerQueue] Try to append 1 batches web console lines for record '52968da0-0bf0-4fe0-93fd-90058f69ed73', success rate: 1/1.
+[2025-07-14 10:20:25Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:25Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:25Z INFO HostContext] Well known directory 'Work': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work'
+[2025-07-14 10:20:26Z INFO JobServerQueue] Try to append 1 batches web console lines for record '52968da0-0bf0-4fe0-93fd-90058f69ed73', success rate: 1/1.
+[2025-07-14 10:20:27Z INFO JobServerQueue] Try to append 1 batches web console lines for record '52968da0-0bf0-4fe0-93fd-90058f69ed73', success rate: 1/1.
+[2025-07-14 10:20:28Z INFO JobServerQueue] Try to append 1 batches web console lines for record '52968da0-0bf0-4fe0-93fd-90058f69ed73', success rate: 1/1.
+[2025-07-14 10:20:29Z INFO JobServerQueue] Try to append 1 batches web console lines for record '52968da0-0bf0-4fe0-93fd-90058f69ed73', success rate: 1/1.
+[2025-07-14 10:20:30Z INFO JobServerQueue] Try to append 1 batches web console lines for record '52968da0-0bf0-4fe0-93fd-90058f69ed73', success rate: 1/1.
+[2025-07-14 10:20:31Z INFO JobServerQueue] Try to append 1 batches web console lines for record '52968da0-0bf0-4fe0-93fd-90058f69ed73', success rate: 1/1.
+[2025-07-14 10:20:32Z INFO JobServerQueue] Try to append 1 batches web console lines for record '52968da0-0bf0-4fe0-93fd-90058f69ed73', success rate: 1/1.
+[2025-07-14 10:20:33Z INFO JobServerQueue] Try to append 1 batches web console lines for record '52968da0-0bf0-4fe0-93fd-90058f69ed73', success rate: 1/1.
+[2025-07-14 10:20:33Z INFO JobServerQueue] Try to append 1 batches web console lines for record '52968da0-0bf0-4fe0-93fd-90058f69ed73', success rate: 1/1.
+[2025-07-14 10:20:33Z INFO JobServerQueue] Try to append 1 batches web console lines for record '52968da0-0bf0-4fe0-93fd-90058f69ed73', success rate: 1/1.
+[2025-07-14 10:20:33Z INFO JobServerQueue] Try to append 1 batches web console lines for record '52968da0-0bf0-4fe0-93fd-90058f69ed73', success rate: 1/1.
+[2025-07-14 10:20:34Z INFO JobServerQueue] Try to append 1 batches web console lines for record '52968da0-0bf0-4fe0-93fd-90058f69ed73', success rate: 1/1.
+[2025-07-14 10:20:34Z INFO JobServerQueue] Try to append 1 batches web console lines for record '52968da0-0bf0-4fe0-93fd-90058f69ed73', success rate: 1/1.
+[2025-07-14 10:20:34Z INFO JobServerQueue] Try to append 1 batches web console lines for record '52968da0-0bf0-4fe0-93fd-90058f69ed73', success rate: 1/1.
+[2025-07-14 10:20:35Z INFO JobServerQueue] Try to append 1 batches web console lines for record '52968da0-0bf0-4fe0-93fd-90058f69ed73', success rate: 1/1.
+[2025-07-14 10:20:35Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:35Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:35Z INFO HostContext] Well known directory 'Work': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work'
+[2025-07-14 10:20:36Z INFO JobServerQueue] Try to append 1 batches web console lines for record '52968da0-0bf0-4fe0-93fd-90058f69ed73', success rate: 1/1.
+[2025-07-14 10:20:36Z INFO JobServerQueue] Try to append 1 batches web console lines for record '52968da0-0bf0-4fe0-93fd-90058f69ed73', success rate: 1/1.
+[2025-07-14 10:20:37Z INFO JobServerQueue] Try to append 1 batches web console lines for record '52968da0-0bf0-4fe0-93fd-90058f69ed73', success rate: 1/1.
+[2025-07-14 10:20:37Z INFO JobServerQueue] Try to append 1 batches web console lines for record '52968da0-0bf0-4fe0-93fd-90058f69ed73', success rate: 1/1.
+[2025-07-14 10:20:38Z INFO JobServerQueue] Try to append 1 batches web console lines for record '52968da0-0bf0-4fe0-93fd-90058f69ed73', success rate: 1/1.
+[2025-07-14 10:20:38Z INFO JobServerQueue] Try to append 1 batches web console lines for record '52968da0-0bf0-4fe0-93fd-90058f69ed73', success rate: 1/1.
+[2025-07-14 10:20:39Z INFO JobServerQueue] Try to append 1 batches web console lines for record '52968da0-0bf0-4fe0-93fd-90058f69ed73', success rate: 1/1.
+[2025-07-14 10:20:40Z INFO JobServerQueue] Try to append 1 batches web console lines for record '52968da0-0bf0-4fe0-93fd-90058f69ed73', success rate: 1/1.
+[2025-07-14 10:20:41Z INFO JobServerQueue] Try to append 1 batches web console lines for record '52968da0-0bf0-4fe0-93fd-90058f69ed73', success rate: 1/1.
+[2025-07-14 10:20:42Z INFO JobServerQueue] Try to append 1 batches web console lines for record '52968da0-0bf0-4fe0-93fd-90058f69ed73', success rate: 1/1.
+[2025-07-14 10:20:43Z INFO JobServerQueue] Try to append 1 batches web console lines for record '52968da0-0bf0-4fe0-93fd-90058f69ed73', success rate: 1/1.
+[2025-07-14 10:20:43Z INFO JobServerQueue] Try to append 2 batches web console lines for record '52968da0-0bf0-4fe0-93fd-90058f69ed73', success rate: 2/2.
+[2025-07-14 10:20:44Z INFO JobServerQueue] Try to append 1 batches web console lines for record '52968da0-0bf0-4fe0-93fd-90058f69ed73', success rate: 1/1.
+[2025-07-14 10:20:44Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-14 10:20:44Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-14 10:20:44Z INFO ProcessInvokerWrapper] Finished process 65951 with exit code 0, and elapsed time 00:00:38.3180035.
+[2025-07-14 10:20:44Z INFO CreateStepSummaryCommand] Step Summary file (/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work/_temp/_runner_file_commands/step_summary_66a55bcf-a320-40eb-b188-46d2c3e08a60) is empty; skipping attachment upload
+[2025-07-14 10:20:44Z INFO StepsRunner] Step result: 
+[2025-07-14 10:20:44Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "actions/checkout",
+  "ref": "v3",
+  "type": "node20",
+  "stage": "Main",
+  "stepId": "52968da0-0bf0-4fe0-93fd-90058f69ed73",
+  "stepContextName": "__actions_checkout",
+  "hasPreStep": false,
+  "hasPostStep": true,
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 39,
+  "startTime": "2025-07-14T10:20:06.046948Z",
+  "finishTime": "2025-07-14T10:20:44.707867Z"
+}.
+[2025-07-14 10:20:44Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2025-07-14 10:20:44Z INFO StepsRunner] Current state: job state = ''
+[2025-07-14 10:20:44Z INFO StepsRunner] Processing step: DisplayName='Set up Kubeconfig'
+[2025-07-14 10:20:44Z INFO StepsRunner] Evaluating: success()
+[2025-07-14 10:20:44Z INFO StepsRunner] Result: true
+[2025-07-14 10:20:44Z INFO StepsRunner] Starting the step.
+[2025-07-14 10:20:44Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:44Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:44Z INFO HostContext] Well known directory 'Work': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work'
+[2025-07-14 10:20:44Z INFO HostContext] Well known directory 'Temp': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work/_temp'
+[2025-07-14 10:20:44Z INFO ExecutionContext] Write event payload to /Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work/_temp/_github_workflow/event.json
+[2025-07-14 10:20:44Z INFO JobServerQueue] Try to append 1 batches web console lines for record '52968da0-0bf0-4fe0-93fd-90058f69ed73', success rate: 1/1.
+[2025-07-14 10:20:44Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:44Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:44Z INFO HostContext] Well known directory 'Work': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work'
+[2025-07-14 10:20:44Z INFO HostContext] Well known directory 'Temp': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work/_temp'
+[2025-07-14 10:20:44Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2025-07-14 10:20:44Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2025-07-14 10:20:44Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2025-07-14 10:20:44Z INFO ActionCommandManager] Register action command extension for command set-env
+[2025-07-14 10:20:44Z INFO ActionCommandManager] Register action command extension for command set-output
+[2025-07-14 10:20:44Z INFO ActionCommandManager] Register action command extension for command save-state
+[2025-07-14 10:20:44Z INFO ActionCommandManager] Register action command extension for command add-path
+[2025-07-14 10:20:44Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2025-07-14 10:20:44Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2025-07-14 10:20:44Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2025-07-14 10:20:44Z INFO ActionCommandManager] Register action command extension for command warning
+[2025-07-14 10:20:44Z INFO ActionCommandManager] Register action command extension for command error
+[2025-07-14 10:20:44Z INFO ActionCommandManager] Register action command extension for command notice
+[2025-07-14 10:20:44Z INFO ActionCommandManager] Register action command extension for command debug
+[2025-07-14 10:20:44Z INFO ActionCommandManager] Register action command extension for command group
+[2025-07-14 10:20:44Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2025-07-14 10:20:44Z INFO ActionCommandManager] Register action command extension for command echo
+[2025-07-14 10:20:44Z INFO JobServerQueue] Got a step log file to send to results service.
+[2025-07-14 10:20:44Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, /Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_diag/blocks/a4e8ab04-3ab9-4170-bb7a-40e9db418b48_52968da0-0bf0-4fe0-93fd-90058f69ed73.1
+[2025-07-14 10:20:45Z INFO JobServerQueue] Try to append 1 batches web console lines for record '6e522902-039a-4e8a-8cb9-dc9c180e19a9', success rate: 1/1.
+[2025-07-14 10:20:45Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2025-07-14 10:20:45Z INFO ScriptHandler] Which2: 'bash'
+[2025-07-14 10:20:45Z INFO JobServerQueue] Try to append 1 batches web console lines for record '6e522902-039a-4e8a-8cb9-dc9c180e19a9', success rate: 1/1.
+[2025-07-14 10:20:45Z INFO ScriptHandler] Location: '/bin/bash'
+[2025-07-14 10:20:45Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:45Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:45Z INFO HostContext] Well known directory 'Work': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work'
+[2025-07-14 10:20:45Z INFO HostContext] Well known directory 'Temp': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work/_temp'
+[2025-07-14 10:20:45Z INFO ScriptHandler] Which2: 'bash'
+[2025-07-14 10:20:45Z INFO ScriptHandler] Location: '/bin/bash'
+[2025-07-14 10:20:45Z INFO ProcessInvokerWrapper] Starting process:
+[2025-07-14 10:20:45Z INFO ProcessInvokerWrapper]   File name: '/bin/bash'
+[2025-07-14 10:20:45Z INFO ProcessInvokerWrapper]   Arguments: '-e /Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work/_temp/cd681594-287a-4541-8cc4-47a614cadcd0.sh'
+[2025-07-14 10:20:45Z INFO ProcessInvokerWrapper]   Working directory: '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work/node-js-sample/node-js-sample'
+[2025-07-14 10:20:45Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-07-14 10:20:45Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-07-14 10:20:45Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-07-14 10:20:45Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-07-14 10:20:45Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2025-07-14 10:20:45Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-07-14 10:20:45Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-07-14 10:20:45Z INFO JobServerQueue] Tried to upload 1 file(s) to results, success rate: 1/1.
+[2025-07-14 10:20:45Z INFO ProcessInvokerWrapper] Process started with process id 66119, waiting for process exit.
+[2025-07-14 10:20:45Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-14 10:20:45Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-14 10:20:45Z INFO ProcessInvokerWrapper] Finished process 66119 with exit code 0, and elapsed time 00:00:00.0878287.
+[2025-07-14 10:20:45Z INFO CreateStepSummaryCommand] Step Summary file (/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work/_temp/_runner_file_commands/step_summary_2b40f1ca-cd24-4223-8a81-9781af40a57c) is empty; skipping attachment upload
+[2025-07-14 10:20:45Z INFO StepsRunner] Step result: 
+[2025-07-14 10:20:45Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "sh",
+  "type": "run",
+  "stage": "Main",
+  "stepId": "6e522902-039a-4e8a-8cb9-dc9c180e19a9",
+  "stepContextName": "__run",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 2,
+  "startTime": "2025-07-14T10:20:44.712782Z",
+  "finishTime": "2025-07-14T10:20:45.984903Z"
+}.
+[2025-07-14 10:20:45Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2025-07-14 10:20:45Z INFO StepsRunner] Current state: job state = ''
+[2025-07-14 10:20:45Z INFO StepsRunner] Processing step: DisplayName='Deploy to Kubernetes (Self-hosted)'
+[2025-07-14 10:20:45Z INFO StepsRunner] Evaluating: success()
+[2025-07-14 10:20:45Z INFO StepsRunner] Result: true
+[2025-07-14 10:20:45Z INFO StepsRunner] Starting the step.
+[2025-07-14 10:20:45Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:45Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:45Z INFO HostContext] Well known directory 'Work': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work'
+[2025-07-14 10:20:45Z INFO HostContext] Well known directory 'Temp': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work/_temp'
+[2025-07-14 10:20:45Z INFO ExecutionContext] Write event payload to /Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work/_temp/_github_workflow/event.json
+[2025-07-14 10:20:45Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:45Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:45Z INFO HostContext] Well known directory 'Work': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work'
+[2025-07-14 10:20:45Z INFO HostContext] Well known directory 'Temp': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work/_temp'
+[2025-07-14 10:20:45Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2025-07-14 10:20:45Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2025-07-14 10:20:45Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2025-07-14 10:20:45Z INFO ActionCommandManager] Register action command extension for command set-env
+[2025-07-14 10:20:45Z INFO ActionCommandManager] Register action command extension for command set-output
+[2025-07-14 10:20:45Z INFO ActionCommandManager] Register action command extension for command save-state
+[2025-07-14 10:20:45Z INFO ActionCommandManager] Register action command extension for command add-path
+[2025-07-14 10:20:45Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2025-07-14 10:20:45Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2025-07-14 10:20:45Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2025-07-14 10:20:45Z INFO ActionCommandManager] Register action command extension for command warning
+[2025-07-14 10:20:45Z INFO ActionCommandManager] Register action command extension for command error
+[2025-07-14 10:20:45Z INFO ActionCommandManager] Register action command extension for command notice
+[2025-07-14 10:20:45Z INFO ActionCommandManager] Register action command extension for command debug
+[2025-07-14 10:20:45Z INFO ActionCommandManager] Register action command extension for command group
+[2025-07-14 10:20:45Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2025-07-14 10:20:45Z INFO ActionCommandManager] Register action command extension for command echo
+[2025-07-14 10:20:45Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:45Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:45Z INFO HostContext] Well known directory 'Work': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work'
+[2025-07-14 10:20:45Z INFO ScriptHandler] Which2: 'bash'
+[2025-07-14 10:20:45Z INFO ScriptHandler] Location: '/bin/bash'
+[2025-07-14 10:20:45Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:45Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:45Z INFO HostContext] Well known directory 'Work': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work'
+[2025-07-14 10:20:46Z INFO HostContext] Well known directory 'Temp': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work/_temp'
+[2025-07-14 10:20:46Z INFO ScriptHandler] Which2: 'bash'
+[2025-07-14 10:20:46Z INFO ScriptHandler] Location: '/bin/bash'
+[2025-07-14 10:20:46Z INFO ProcessInvokerWrapper] Starting process:
+[2025-07-14 10:20:46Z INFO ProcessInvokerWrapper]   File name: '/bin/bash'
+[2025-07-14 10:20:46Z INFO ProcessInvokerWrapper]   Arguments: '-e /Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work/_temp/453aa490-abe9-46e9-96fa-580f6c78ab91.sh'
+[2025-07-14 10:20:46Z INFO ProcessInvokerWrapper]   Working directory: '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work/node-js-sample/node-js-sample'
+[2025-07-14 10:20:46Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-07-14 10:20:46Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-07-14 10:20:46Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-07-14 10:20:46Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-07-14 10:20:46Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2025-07-14 10:20:46Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-07-14 10:20:46Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-07-14 10:20:46Z INFO ProcessInvokerWrapper] Process started with process id 66120, waiting for process exit.
+[2025-07-14 10:20:46Z INFO JobServerQueue] Try to append 1 batches web console lines for record '6e522902-039a-4e8a-8cb9-dc9c180e19a9', success rate: 1/1.
+[2025-07-14 10:20:46Z INFO JobServerQueue] Try to append 1 batches web console lines for record '84f393a6-6db2-4ffd-a916-09eaa6bc7988', success rate: 1/1.
+[2025-07-14 10:20:46Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-14 10:20:46Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-14 10:20:46Z INFO ProcessInvokerWrapper] Finished process 66120 with exit code 0, and elapsed time 00:00:00.2884379.
+[2025-07-14 10:20:46Z INFO CreateStepSummaryCommand] Step Summary file (/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work/_temp/_runner_file_commands/step_summary_e137f9f0-7239-4dd3-ad4d-563abf0401e9) is empty; skipping attachment upload
+[2025-07-14 10:20:46Z INFO StepsRunner] Step result: 
+[2025-07-14 10:20:46Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "sh",
+  "type": "run",
+  "stage": "Main",
+  "stepId": "84f393a6-6db2-4ffd-a916-09eaa6bc7988",
+  "stepContextName": "__run_2",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 1,
+  "startTime": "2025-07-14T10:20:45.986587Z",
+  "finishTime": "2025-07-14T10:20:46.295615Z"
+}.
+[2025-07-14 10:20:46Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2025-07-14 10:20:46Z INFO StepsRunner] Current state: job state = ''
+[2025-07-14 10:20:46Z INFO StepsRunner] Processing step: DisplayName='Post Checkout code'
+[2025-07-14 10:20:46Z INFO StepsRunner] Evaluating: always()
+[2025-07-14 10:20:46Z INFO StepsRunner] Result: true
+[2025-07-14 10:20:46Z INFO StepsRunner] Starting the step.
+[2025-07-14 10:20:46Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:46Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:46Z INFO HostContext] Well known directory 'Work': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work'
+[2025-07-14 10:20:46Z INFO HostContext] Well known directory 'Actions': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work/_actions'
+[2025-07-14 10:20:46Z INFO ActionManager] Load action that reference repository from '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work/_actions/actions/checkout/v3'
+[2025-07-14 10:20:46Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:46Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:46Z INFO HostContext] Well known directory 'Work': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work'
+[2025-07-14 10:20:46Z INFO HostContext] Well known directory 'Actions': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work/_actions'
+[2025-07-14 10:20:46Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 50,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 53,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 56,
+          "col": 3,
+          "lit": "sparse-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 60,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 61,
+          "col": 3,
+          "lit": "sparse-checkout-cone-mode"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 64,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 65,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 67,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 68,
+          "col": 3,
+          "lit": "fetch-tags"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 71,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 74,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 82,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 83,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 85,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 86,
+          "col": 3,
+          "lit": "github-server-url"
+        },
+        "value": ""
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node16",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2025-07-14 10:20:46Z INFO ActionManager] Action pre node.js file: N/A.
+[2025-07-14 10:20:46Z INFO ActionManager] Action node.js file: dist/index.js.
+[2025-07-14 10:20:46Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2025-07-14 10:20:46Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:46Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:46Z INFO HostContext] Well known directory 'Work': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work'
+[2025-07-14 10:20:46Z INFO HostContext] Well known directory 'Temp': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work/_temp'
+[2025-07-14 10:20:46Z INFO ExecutionContext] Write event payload to /Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work/_temp/_github_workflow/event.json
+[2025-07-14 10:20:46Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:46Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:46Z INFO HostContext] Well known directory 'Work': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work'
+[2025-07-14 10:20:46Z INFO HostContext] Well known directory 'Temp': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work/_temp'
+[2025-07-14 10:20:46Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2025-07-14 10:20:46Z INFO ActionManifestManager] Input 'repository': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 6,
+  "col": 14,
+  "lit": "anupsharma329/node-js-sample"
+}
+[2025-07-14 10:20:46Z INFO ActionManifestManager] Input 'ref': default value evaluate result: ""
+[2025-07-14 10:20:46Z INFO ActionManifestManager] Input 'token': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 24,
+  "col": 14,
+  "lit": "***"
+}
+[2025-07-14 10:20:46Z INFO ActionManifestManager] Input 'ssh-key': default value evaluate result: ""
+[2025-07-14 10:20:46Z INFO ActionManifestManager] Input 'ssh-known-hosts': default value evaluate result: ""
+[2025-07-14 10:20:46Z INFO ActionManifestManager] Input 'ssh-strict': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 47,
+  "col": 14,
+  "lit": "true"
+}
+[2025-07-14 10:20:46Z INFO ActionManifestManager] Input 'persist-credentials': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 50,
+  "col": 14,
+  "lit": "true"
+}
+[2025-07-14 10:20:46Z INFO ActionManifestManager] Input 'path': default value evaluate result: ""
+[2025-07-14 10:20:46Z INFO ActionManifestManager] Input 'clean': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 55,
+  "col": 14,
+  "lit": "true"
+}
+[2025-07-14 10:20:46Z INFO ActionManifestManager] Input 'sparse-checkout': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 60,
+  "col": 14,
+  "lit": ""
+}
+[2025-07-14 10:20:46Z INFO ActionManifestManager] Input 'sparse-checkout-cone-mode': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 64,
+  "col": 14,
+  "lit": "true"
+}
+[2025-07-14 10:20:46Z INFO ActionManifestManager] Input 'fetch-depth': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 67,
+  "col": 14,
+  "lit": "1"
+}
+[2025-07-14 10:20:46Z INFO ActionManifestManager] Input 'fetch-tags': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 70,
+  "col": 14,
+  "lit": "false"
+}
+[2025-07-14 10:20:46Z INFO ActionManifestManager] Input 'lfs': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 73,
+  "col": 14,
+  "lit": "false"
+}
+[2025-07-14 10:20:46Z INFO ActionManifestManager] Input 'submodules': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 82,
+  "col": 14,
+  "lit": "false"
+}
+[2025-07-14 10:20:46Z INFO ActionManifestManager] Input 'set-safe-directory': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 85,
+  "col": 14,
+  "lit": "true"
+}
+[2025-07-14 10:20:46Z INFO ActionManifestManager] Input 'github-server-url': default value evaluate result: ""
+[2025-07-14 10:20:46Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2025-07-14 10:20:46Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2025-07-14 10:20:46Z INFO ActionCommandManager] Register action command extension for command set-env
+[2025-07-14 10:20:46Z INFO ActionCommandManager] Register action command extension for command set-output
+[2025-07-14 10:20:46Z INFO ActionCommandManager] Register action command extension for command save-state
+[2025-07-14 10:20:46Z INFO ActionCommandManager] Register action command extension for command add-path
+[2025-07-14 10:20:46Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2025-07-14 10:20:46Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2025-07-14 10:20:46Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2025-07-14 10:20:46Z INFO ActionCommandManager] Register action command extension for command warning
+[2025-07-14 10:20:46Z INFO ActionCommandManager] Register action command extension for command error
+[2025-07-14 10:20:46Z INFO ActionCommandManager] Register action command extension for command notice
+[2025-07-14 10:20:46Z INFO ActionCommandManager] Register action command extension for command debug
+[2025-07-14 10:20:46Z INFO ActionCommandManager] Register action command extension for command group
+[2025-07-14 10:20:46Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2025-07-14 10:20:46Z INFO ActionCommandManager] Register action command extension for command echo
+[2025-07-14 10:20:46Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:46Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:46Z INFO HostContext] Well known directory 'Externals': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/externals'
+[2025-07-14 10:20:46Z INFO ProcessInvokerWrapper] Starting process:
+[2025-07-14 10:20:46Z INFO ProcessInvokerWrapper]   File name: '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/externals/node20/bin/node'
+[2025-07-14 10:20:46Z INFO ProcessInvokerWrapper]   Arguments: '"/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work/_actions/actions/checkout/v3/dist/index.js"'
+[2025-07-14 10:20:46Z INFO ProcessInvokerWrapper]   Working directory: '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work/node-js-sample/node-js-sample'
+[2025-07-14 10:20:46Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-07-14 10:20:46Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-07-14 10:20:46Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-07-14 10:20:46Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-07-14 10:20:46Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2025-07-14 10:20:46Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-07-14 10:20:46Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-07-14 10:20:46Z INFO JobServerQueue] Try to append 1 batches web console lines for record '84f393a6-6db2-4ffd-a916-09eaa6bc7988', success rate: 1/1.
+[2025-07-14 10:20:46Z INFO JobServerQueue] Try to append 1 batches web console lines for record '0825c782-371f-4223-94f0-9c2d7d81f755', success rate: 1/1.
+[2025-07-14 10:20:46Z INFO ProcessInvokerWrapper] Process started with process id 66122, waiting for process exit.
+[2025-07-14 10:20:46Z INFO AddMaskCommandExtension] Add new secret mask with length of 32
+[2025-07-14 10:20:46Z INFO JobServerQueue] Try to append 1 batches web console lines for record '0825c782-371f-4223-94f0-9c2d7d81f755', success rate: 1/1.
+[2025-07-14 10:20:46Z INFO JobServerQueue] Try to upload 2 log files or attachments, success rate: 2/2.
+[2025-07-14 10:20:46Z INFO JobServerQueue] Try to append 1 batches web console lines for record '0825c782-371f-4223-94f0-9c2d7d81f755', success rate: 1/1.
+[2025-07-14 10:20:46Z INFO JobServerQueue] Got a step log file to send to results service.
+[2025-07-14 10:20:46Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, /Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_diag/blocks/a4e8ab04-3ab9-4170-bb7a-40e9db418b48_6e522902-039a-4e8a-8cb9-dc9c180e19a9.1
+[2025-07-14 10:20:47Z INFO JobServerQueue] Try to append 1 batches web console lines for record '0825c782-371f-4223-94f0-9c2d7d81f755', success rate: 1/1.
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] Finished process 66122 with exit code 0, and elapsed time 00:00:01.0051121.
+[2025-07-14 10:20:47Z INFO CreateStepSummaryCommand] Step Summary file (/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work/_temp/_runner_file_commands/step_summary_1597cd46-3b3c-4847-92ee-6df6b40085b4) is empty; skipping attachment upload
+[2025-07-14 10:20:47Z INFO StepsRunner] Step result: 
+[2025-07-14 10:20:47Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "actions/checkout",
+  "ref": "v3",
+  "type": "node20",
+  "stage": "Post",
+  "stepId": "0825c782-371f-4223-94f0-9c2d7d81f755",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 2,
+  "startTime": "2025-07-14T10:20:46.297647Z",
+  "finishTime": "2025-07-14T10:20:47.331693Z"
+}.
+[2025-07-14 10:20:47Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2025-07-14 10:20:47Z INFO StepsRunner] Current state: job state = ''
+[2025-07-14 10:20:47Z INFO JobRunner] Finalize job.
+[2025-07-14 10:20:47Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:47Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:47Z INFO HostContext] Well known directory 'Diag': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_diag'
+[2025-07-14 10:20:47Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:47Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:47Z INFO HostContext] Well known directory 'Diag': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_diag'
+[2025-07-14 10:20:47Z INFO JobExtension] Initialize Env context
+[2025-07-14 10:20:47Z INFO JobExtension] Initialize steps context
+[2025-07-14 10:20:47Z INFO JobExtension] Total accessible running process: 313.
+[2025-07-14 10:20:47Z INFO JobExtension] Inspecting process environment variables. PID: 66129 (mdworker_shared)
+[2025-07-14 10:20:47Z INFO LinuxProcessExtensions] Read env from output of `ps e -p 66129 -o command`
+[2025-07-14 10:20:47Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:47Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] Starting process:
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   File name: 'ps'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Arguments: 'e -p 66129 -o command'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Working directory: '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-07-14 10:20:47Z INFO JobServerQueue] Try to append 1 batches web console lines for record '36803d50-c2a0-4a73-98a3-e93aaa3603df', success rate: 1/1.
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] Process started with process id 66202, waiting for process exit.
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] Finished process 66202 with exit code 0, and elapsed time 00:00:00.2352590.
+[2025-07-14 10:20:47Z INFO LinuxProcessExtensions] Successfully dump environment variables for 66129
+[2025-07-14 10:20:47Z INFO JobExtension] Inspecting process environment variables. PID: 66127 (mdworker_shared)
+[2025-07-14 10:20:47Z INFO LinuxProcessExtensions] Read env from output of `ps e -p 66127 -o command`
+[2025-07-14 10:20:47Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:47Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] Starting process:
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   File name: 'ps'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Arguments: 'e -p 66127 -o command'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Working directory: '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] Process started with process id 66204, waiting for process exit.
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] Finished process 66204 with exit code 0, and elapsed time 00:00:00.0348115.
+[2025-07-14 10:20:47Z INFO LinuxProcessExtensions] Successfully dump environment variables for 66127
+[2025-07-14 10:20:47Z INFO JobExtension] Inspecting process environment variables. PID: 66125 (mdworker_shared)
+[2025-07-14 10:20:47Z INFO LinuxProcessExtensions] Read env from output of `ps e -p 66125 -o command`
+[2025-07-14 10:20:47Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:47Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] Starting process:
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   File name: 'ps'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Arguments: 'e -p 66125 -o command'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Working directory: '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-07-14 10:20:47Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] Process started with process id 66205, waiting for process exit.
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-14 10:20:47Z INFO JobServerQueue] Got a step log file to send to results service.
+[2025-07-14 10:20:47Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, /Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_diag/blocks/a4e8ab04-3ab9-4170-bb7a-40e9db418b48_84f393a6-6db2-4ffd-a916-09eaa6bc7988.1
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] Finished process 66205 with exit code 0, and elapsed time 00:00:00.0632682.
+[2025-07-14 10:20:47Z INFO LinuxProcessExtensions] Successfully dump environment variables for 66125
+[2025-07-14 10:20:47Z INFO JobExtension] Inspecting process environment variables. PID: 66126 (mdworker_shared)
+[2025-07-14 10:20:47Z INFO LinuxProcessExtensions] Read env from output of `ps e -p 66126 -o command`
+[2025-07-14 10:20:47Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:47Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] Starting process:
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   File name: 'ps'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Arguments: 'e -p 66126 -o command'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Working directory: '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] Process started with process id 66206, waiting for process exit.
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] Finished process 66206 with exit code 0, and elapsed time 00:00:00.0431433.
+[2025-07-14 10:20:47Z INFO LinuxProcessExtensions] Successfully dump environment variables for 66126
+[2025-07-14 10:20:47Z INFO JobExtension] Inspecting process environment variables. PID: 66118 (mdworker_shared)
+[2025-07-14 10:20:47Z INFO LinuxProcessExtensions] Read env from output of `ps e -p 66118 -o command`
+[2025-07-14 10:20:47Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:47Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] Starting process:
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   File name: 'ps'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Arguments: 'e -p 66118 -o command'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Working directory: '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] Process started with process id 66207, waiting for process exit.
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] Finished process 66207 with exit code 0, and elapsed time 00:00:00.0263911.
+[2025-07-14 10:20:47Z INFO LinuxProcessExtensions] Successfully dump environment variables for 66118
+[2025-07-14 10:20:47Z INFO JobExtension] Inspecting process environment variables. PID: 66116 (mdworker_shared)
+[2025-07-14 10:20:47Z INFO LinuxProcessExtensions] Read env from output of `ps e -p 66116 -o command`
+[2025-07-14 10:20:47Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:47Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] Starting process:
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   File name: 'ps'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Arguments: 'e -p 66116 -o command'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Working directory: '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] Process started with process id 66210, waiting for process exit.
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] Finished process 66210 with exit code 0, and elapsed time 00:00:00.0290201.
+[2025-07-14 10:20:47Z INFO LinuxProcessExtensions] Successfully dump environment variables for 66116
+[2025-07-14 10:20:47Z INFO JobExtension] Inspecting process environment variables. PID: 66117 (mdworker_shared)
+[2025-07-14 10:20:47Z INFO LinuxProcessExtensions] Read env from output of `ps e -p 66117 -o command`
+[2025-07-14 10:20:47Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:47Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] Starting process:
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   File name: 'ps'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Arguments: 'e -p 66117 -o command'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Working directory: '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] Process started with process id 66211, waiting for process exit.
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] Finished process 66211 with exit code 0, and elapsed time 00:00:00.0309614.
+[2025-07-14 10:20:47Z INFO LinuxProcessExtensions] Successfully dump environment variables for 66117
+[2025-07-14 10:20:47Z INFO JobExtension] Inspecting process environment variables. PID: 66114 (mdworker_shared)
+[2025-07-14 10:20:47Z INFO LinuxProcessExtensions] Read env from output of `ps e -p 66114 -o command`
+[2025-07-14 10:20:47Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:47Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] Starting process:
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   File name: 'ps'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Arguments: 'e -p 66114 -o command'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Working directory: '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] Process started with process id 66212, waiting for process exit.
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] Finished process 66212 with exit code 0, and elapsed time 00:00:00.0253122.
+[2025-07-14 10:20:47Z INFO LinuxProcessExtensions] Successfully dump environment variables for 66114
+[2025-07-14 10:20:47Z INFO JobExtension] Inspecting process environment variables. PID: 66115 (mdworker_shared)
+[2025-07-14 10:20:47Z INFO LinuxProcessExtensions] Read env from output of `ps e -p 66115 -o command`
+[2025-07-14 10:20:47Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:47Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] Starting process:
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   File name: 'ps'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Arguments: 'e -p 66115 -o command'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Working directory: '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] Process started with process id 66213, waiting for process exit.
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] Finished process 66213 with exit code 0, and elapsed time 00:00:00.0272281.
+[2025-07-14 10:20:47Z INFO LinuxProcessExtensions] Successfully dump environment variables for 66115
+[2025-07-14 10:20:47Z INFO JobExtension] Inspecting process environment variables. PID: 66113 (mdworker_shared)
+[2025-07-14 10:20:47Z INFO LinuxProcessExtensions] Read env from output of `ps e -p 66113 -o command`
+[2025-07-14 10:20:47Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:47Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] Starting process:
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   File name: 'ps'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Arguments: 'e -p 66113 -o command'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Working directory: '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] Process started with process id 66214, waiting for process exit.
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] Finished process 66214 with exit code 0, and elapsed time 00:00:00.0266028.
+[2025-07-14 10:20:47Z INFO LinuxProcessExtensions] Successfully dump environment variables for 66113
+[2025-07-14 10:20:47Z INFO JobExtension] Inspecting process environment variables. PID: 66112 (mdworker_shared)
+[2025-07-14 10:20:47Z INFO LinuxProcessExtensions] Read env from output of `ps e -p 66112 -o command`
+[2025-07-14 10:20:47Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:47Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] Starting process:
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   File name: 'ps'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Arguments: 'e -p 66112 -o command'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Working directory: '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] Process started with process id 66215, waiting for process exit.
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] Finished process 66215 with exit code 0, and elapsed time 00:00:00.0263404.
+[2025-07-14 10:20:47Z INFO LinuxProcessExtensions] Successfully dump environment variables for 66112
+[2025-07-14 10:20:47Z INFO JobExtension] Inspecting process environment variables. PID: 66111 (mdworker_shared)
+[2025-07-14 10:20:47Z INFO LinuxProcessExtensions] Read env from output of `ps e -p 66111 -o command`
+[2025-07-14 10:20:47Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:47Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] Starting process:
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   File name: 'ps'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Arguments: 'e -p 66111 -o command'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Working directory: '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] Process started with process id 66216, waiting for process exit.
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] Finished process 66216 with exit code 0, and elapsed time 00:00:00.0290690.
+[2025-07-14 10:20:47Z INFO LinuxProcessExtensions] Successfully dump environment variables for 66111
+[2025-07-14 10:20:47Z INFO JobExtension] Inspecting process environment variables. PID: 66108 (mdworker_shared)
+[2025-07-14 10:20:47Z INFO LinuxProcessExtensions] Read env from output of `ps e -p 66108 -o command`
+[2025-07-14 10:20:47Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:47Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] Starting process:
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   File name: 'ps'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Arguments: 'e -p 66108 -o command'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Working directory: '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] Process started with process id 66217, waiting for process exit.
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] Finished process 66217 with exit code 0, and elapsed time 00:00:00.0300200.
+[2025-07-14 10:20:47Z INFO LinuxProcessExtensions] Successfully dump environment variables for 66108
+[2025-07-14 10:20:47Z INFO JobExtension] Inspecting process environment variables. PID: 66107 (mdworker_shared)
+[2025-07-14 10:20:47Z INFO LinuxProcessExtensions] Read env from output of `ps e -p 66107 -o command`
+[2025-07-14 10:20:47Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:47Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper] Starting process:
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   File name: 'ps'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Arguments: 'e -p 66107 -o command'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Working directory: '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-07-14 10:20:47Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-07-14 10:20:48Z INFO ProcessInvokerWrapper] Process started with process id 66218, waiting for process exit.
+[2025-07-14 10:20:48Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-14 10:20:48Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-14 10:20:48Z INFO ProcessInvokerWrapper] Finished process 66218 with exit code 0, and elapsed time 00:00:00.0328272.
+[2025-07-14 10:20:48Z INFO LinuxProcessExtensions] Successfully dump environment variables for 66107
+[2025-07-14 10:20:48Z INFO JobExtension] Inspecting process environment variables. PID: 66101 (mdworker_shared)
+[2025-07-14 10:20:48Z INFO LinuxProcessExtensions] Read env from output of `ps e -p 66101 -o command`
+[2025-07-14 10:20:48Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:48Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:48Z INFO ProcessInvokerWrapper] Starting process:
+[2025-07-14 10:20:48Z INFO ProcessInvokerWrapper]   File name: 'ps'
+[2025-07-14 10:20:48Z INFO ProcessInvokerWrapper]   Arguments: 'e -p 66101 -o command'
+[2025-07-14 10:20:48Z INFO ProcessInvokerWrapper]   Working directory: '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:48Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-07-14 10:20:48Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-07-14 10:20:48Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-07-14 10:20:48Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-07-14 10:20:48Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2025-07-14 10:20:48Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-07-14 10:20:48Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-07-14 10:20:48Z INFO ProcessInvokerWrapper] Process started with process id 66219, waiting for process exit.
+[2025-07-14 10:20:48Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-14 10:20:48Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-14 10:20:48Z INFO ProcessInvokerWrapper] Finished process 66219 with exit code 0, and elapsed time 00:00:00.0319985.
+[2025-07-14 10:20:48Z INFO LinuxProcessExtensions] Successfully dump environment variables for 66101
+[2025-07-14 10:20:48Z INFO JobExtension] Inspecting process environment variables. PID: 66083 (AXVisualSupport)
+[2025-07-14 10:20:48Z INFO LinuxProcessExtensions] Read env from output of `ps e -p 66083 -o command`
+[2025-07-14 10:20:48Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:48Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:48Z INFO ProcessInvokerWrapper] Starting process:
+[2025-07-14 10:20:48Z INFO ProcessInvokerWrapper]   File name: 'ps'
+[2025-07-14 10:20:48Z INFO ProcessInvokerWrapper]   Arguments: 'e -p 66083 -o command'
+[2025-07-14 10:20:48Z INFO ProcessInvokerWrapper]   Working directory: '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:48Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-07-14 10:20:48Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-07-14 10:20:48Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-07-14 10:20:48Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-07-14 10:20:48Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2025-07-14 10:20:48Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-07-14 10:20:48Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-07-14 10:20:48Z INFO ProcessInvokerWrapper] Process started with process id 66220, waiting for process exit.
+[2025-07-14 10:20:48Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-14 10:20:48Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-14 10:20:48Z INFO ProcessInvokerWrapper] Finished process 66220 with exit code 0, and elapsed time 00:00:00.0317110.
+[2025-07-14 10:20:48Z INFO LinuxProcessExtensions] Successfully dump environment variables for 66083
+[2025-07-14 10:20:48Z INFO JobExtension] Inspecting process environment variables. PID: 65963 (mdworker_shared)
+[2025-07-14 10:20:48Z INFO LinuxProcessExtensions] Read env from output of `ps e -p 65963 -o command`
+[2025-07-14 10:20:48Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:48Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:48Z INFO ProcessInvokerWrapper] Starting process:
+[2025-07-14 10:20:48Z INFO ProcessInvokerWrapper]   File name: 'ps'
+[2025-07-14 10:20:48Z INFO ProcessInvokerWrapper]   Arguments: 'e -p 65963 -o command'
+[2025-07-14 10:20:48Z INFO ProcessInvokerWrapper]   Working directory: '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:48Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-07-14 10:20:48Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-07-14 10:20:48Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-07-14 10:20:48Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-07-14 10:20:48Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2025-07-14 10:20:48Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-07-14 10:20:48Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-07-14 10:20:48Z INFO ProcessInvokerWrapper] Process started with process id 66221, waiting for process exit.
+[2025-07-14 10:20:48Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-14 10:20:48Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-14 10:20:48Z INFO ProcessInvokerWrapper] Finished process 66221 with exit code 0, and elapsed time 00:00:00.0262975.
+[2025-07-14 10:20:48Z INFO LinuxProcessExtensions] Successfully dump environment variables for 65963
+[2025-07-14 10:20:48Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "complete_job",
+  "type": "runner",
+  "stage": "Post",
+  "stepId": "36803d50-c2a0-4a73-98a3-e93aaa3603df",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 1,
+  "startTime": "2025-07-14T10:20:47.339563Z",
+  "finishTime": "2025-07-14T10:20:48.130355Z"
+}.
+[2025-07-14 10:20:48Z INFO JobRunner] Job result after all job steps finish: Succeeded
+[2025-07-14 10:20:48Z INFO JobRunner] Completing the job execution context.
+[2025-07-14 10:20:48Z INFO JobRunner] Shutting down the job server queue.
+[2025-07-14 10:20:48Z INFO JobServerQueue] Fire signal to shutdown all queues.
+[2025-07-14 10:20:48Z INFO JobServerQueue] Tried to upload 2 file(s) to results, success rate: 2/2.
+[2025-07-14 10:20:49Z INFO JobServerQueue] All queue process task stopped.
+[2025-07-14 10:20:49Z INFO JobServerQueue] Web console line queue drained.
+[2025-07-14 10:20:49Z INFO JobServerQueue] Uploading 2 files in one shot.
+[2025-07-14 10:20:49Z INFO JobServerQueue] Try to upload 2 log files or attachments, success rate: 2/2.
+[2025-07-14 10:20:49Z INFO JobServerQueue] File upload queue drained.
+[2025-07-14 10:20:49Z INFO JobServerQueue] Starting results-based upload queue...
+[2025-07-14 10:20:49Z INFO JobServerQueue] Uploading 3 file(s) in one shot through results service.
+[2025-07-14 10:20:49Z INFO JobServerQueue] Got a step log file to send to results service.
+[2025-07-14 10:20:49Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, /Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_diag/blocks/a4e8ab04-3ab9-4170-bb7a-40e9db418b48_0825c782-371f-4223-94f0-9c2d7d81f755.1
+[2025-07-14 10:20:50Z INFO JobServerQueue] Got a step log file to send to results service.
+[2025-07-14 10:20:50Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, /Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_diag/blocks/a4e8ab04-3ab9-4170-bb7a-40e9db418b48_36803d50-c2a0-4a73-98a3-e93aaa3603df.1
+[2025-07-14 10:20:50Z INFO JobServerQueue] Got a job log file to send to results service.
+[2025-07-14 10:20:50Z INFO JobServerQueue] Starting upload of job log file to results service ResultsLog, /Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_diag/blocks/a4e8ab04-3ab9-4170-bb7a-40e9db418b48_cd3fa5dd-cfb9-5952-816a-a4a225e779bd.1
+[2025-07-14 10:20:55Z INFO JobServerQueue] Tried to upload 3 file(s) to results, success rate: 3/3.
+[2025-07-14 10:20:55Z INFO JobServerQueue] Results upload queue drained.
+[2025-07-14 10:20:55Z INFO JobServerQueue] Timeline update queue drained.
+[2025-07-14 10:20:55Z INFO JobServerQueue] Disposing job server ...
+[2025-07-14 10:20:55Z INFO JobServerQueue] Disposing results server ...
+[2025-07-14 10:20:55Z INFO JobServerQueue] All queue process tasks have been stopped, and all queues are drained.
+[2025-07-14 10:20:55Z INFO TempDirectoryManager] Cleaning runner temp folder: /Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_work/_temp
+[2025-07-14 10:20:55Z INFO HostContext] Well known directory 'Bin': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/bin'
+[2025-07-14 10:20:55Z INFO HostContext] Well known directory 'Root': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner'
+[2025-07-14 10:20:55Z INFO HostContext] Well known directory 'Diag': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_diag'
+[2025-07-14 10:20:55Z INFO HostContext] Well known config file 'Telemetry': '/Users/anupsharma/devops/sampletask/node-js-sample/actions-runner/_diag/.telemetry'
+[2025-07-14 10:20:55Z INFO JobRunner] Raising job completed against run service
+[2025-07-14 10:20:56Z INFO Worker] Job completed.

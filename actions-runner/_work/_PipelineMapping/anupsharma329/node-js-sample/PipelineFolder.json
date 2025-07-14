@@ -1,0 +1,12 @@
+﻿{
+  "repositoryName": "anupsharma329/node-js-sample",
+  "pipelineDirectory": "node-js-sample",
+  "workspaceDirectory": "node-js-sample/node-js-sample",
+  "repositories": {
+    "anupsharma329/node-js-sample": {
+      "repositoryPath": "node-js-sample/node-js-sample",
+      "lastRunOn": "07/14/2025 15:50:02 +05:30"
+    }
+  },
+  "lastRunOn": "07/14/2025 15:50:02 +05:30"
+}

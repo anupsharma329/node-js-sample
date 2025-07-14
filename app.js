@@ -1,12 +1,11 @@
-var express = require('express')
-var app = express()
+const express = require('express');
+const app = express();
 
-app.set('port', (process.env.PORT || 3000))
-app.use(express.static(__dirname + '/public'))
+app.set('port', process.env.PORT || 3000);
+app.use(express.static(__dirname + '/public'));
 
-
-app.get('/', function(request, response) {
-  response.send(`
+app.get('/', function (req, res) {
+  res.send(`
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -61,7 +60,6 @@ app.get('/', function(request, response) {
   `);
 });
 
-app.listen(app.get('port'), '0.0.0.0', function() {
-  console.log("Node app is running at 0.0.0.0:" + app.get('port'))
-})
-console.log("🚀 Updated at " + new Date()); 
+app.listen(app.get('port'), '0.0.0.0', function () {
+  console.log('Node app is running at 0.0.0.0:' + app.get('port'));
+});
