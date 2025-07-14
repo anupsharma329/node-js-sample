@@ -3,12 +3,12 @@ name: CI/CD Pipeline
 on:
   push:
     branches:
-<<<<<<< HEAD
       - master
-=======
-      - main  # or master
->>>>>>> e9d58e36d695c1c81a4653036391d263923e6cc7
-
+      - main
+  pull_request:
+    branches:
+      - master
+      - main
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
