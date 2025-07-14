@@ -1,0 +1,11 @@
+﻿{
+  "agentId": 2,
+  "agentName": "anupsharma329-2",
+  "poolId": 1,
+  "poolName": "Default",
+  "serverUrl": "https://pipelinesghubeus15.actions.githubusercontent.com/DDrTkuA3P4NIo0fVlaBSYAoRzJMxWDBmDb7jnqP4VO5sJlLjor/",
+  "gitHubUrl": "https://github.com/anupsharma329/node-js-sample",
+  "workFolder": "_work",
+  "useV2Flow": true,
+  "serverUrlV2": "https://broker.actions.githubusercontent.com/"
+}
